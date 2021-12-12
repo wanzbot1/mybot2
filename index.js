@@ -145,7 +145,7 @@ HargaPremium = set.HargaPremium
 NomorGopay = set.NomorGopay
 NomorDana = set.NomorDana
 NomorOvo = set.NomorOvo
-
+apidapa = '8ozc6QOHni'
 // Symbol
 atas = tes.Atas
 bawah = tes.Bawah
@@ -1106,7 +1106,6 @@ ${atas}
 ${bates} *DOWNLOAD MENU*
 ${garis + kotak} ${prefix}ytmp3 < Link >
 ${garis + kotak} ${prefix}ytmp4 < Link >
-${garis + kotak} ${prefix}playmp3 < Query >
 ${bawah}
 
 ${atas}
@@ -1820,22 +1819,44 @@ break
 					}
 					break
 				case 'bc':
-					dha.updatePresence(from, Presence.composing) 
-				     if (!isOwner) return reply(mess.only.owner)
-					if (args.length < 1) return reply('.......')
+					dha.updatePresence(from, Presence.composing)
+					if (!isOwner && !mek.key.fromMe) return sticOwner(from)
+					if (args.length < 1) return reply('Teksnya?')
 					anu = await dha.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 						buff = await dha.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							dha.sendMessage(_.jid, buff, image, {caption: `[ BROADCAST ]\n${body.slice(4)}`})
+							dha.sendMessage(_.jid, buff, image, { viewOnce:true, caption: `${body.slice(4)}`})
 						}
-						reply('')
+						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
+						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await dha.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							dha.sendMessage(_.jid, buff, video, { viewOnce:true, caption: `${body.slice(4)}`})
+						}
+						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
+						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await dha.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							dha.sendMessage(_.jid, buff, video, { mimetype: Mimetype.gif, quoted: finv, contextInfo: { forwardingScore: 508, isForwarded: true}, caption: `${body.slice(4)}` })
+						}
+						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `[ BROADCAST ]\n${body.slice(4)}`)
+							//sendMess(_.jid, `${body.slice(4)}`)
+buttons = [{buttonId: `menu`, buttonText: {displayText: 'MENU'}, type: 1},{buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1}]
+const btnbc = {
+    contentText: `${body.slice(4)}`,
+    footerText: '*_dhaXd BOTZ_*',
+    buttons: buttons,
+    headerType: 1
+}
+await dha.sendMessage(_.jid, btnbc, MessageType.buttonsMessage, {quoted: ftrol})
 						}
-						reply('*Done*')
+						reply(`Sukses mengirim Broadcast:\n${body.slice(4)}`)
 					}
 					break
 				case 'bc2':
@@ -2181,6 +2202,7 @@ case 'bass':
 						reply(`Kirim gambar dengan caption ${prefix}sticker atau reply/tag gambar`)
 					}
 					break  
+					// Other Mnu
                     case 'admin':  
          	        case 'owner':  
          	        case 'creator':           	        		
@@ -2254,6 +2276,9 @@ break
               afk.addAfkUser(sender, time, reason, _afk)
               const aluty = `Fitur AFK berhasil *diaktifkan!*\n\n☞ *Username*: ${pushname}\n☞ *Alasan*: ${reason}`
               reply(aluty)
+              case 'rate':
+              case 'rating':
+              break
 //◢◤◢◤◢◤◢◤◢◤◢◤◢◤ CEK+RANDOM TAG FEATURED //
 //◢◤◢◤◢◤◢◤◢◤◢◤◢◤ BY NAYLA CAMTEK NO DEBAT!! //
             case 'xkontol':	
@@ -2585,12 +2610,41 @@ Ketik Y/N untuk menerima atau menolak permainan
 Ket : Ketik /resetgame , Untuk Mereset Permainan Yg Ada Di Grup!`, text, {contextInfo: {mentionedJid: [player2]}})
               gameAdd(sender, glimit)
               break 
-break
+              
+
+
+//Tes New
 case 'tes':
 case 'test':
 reply('On')
 break
-
+case 'createcatalog':
+if (args.length === 0) return reply(`Example : ${prefix + command} Nama Catalog|Isi Catalog|Nomor Pembuat Catalog\n*Awali Nomor Dengan 62*`)
+var nnn = body.slice(15)
+var namanye = nnn.split("|")[0]
+var isinye = nnn.split("|")[1]
+var nomernye = nnn.split("|")[2]
+namae = `${namanye}`
+ownereJid = `${nomernye}@s.whatsapp.net`
+nomor = 1
+stod = `${sender}`
+stst = await dha.getStatus(`${sender.split('@')[0]}@c.us`)
+stst = stst.status == 401 ? '' : stst.status
+menunye = `${isinye}`
+anu = dha.prepareMessageFromContent(from,{"productMessage": {"product": {"productImage": {"url": "https://mmg.whatsapp.net/d/f/Au9n7y-3XR4R0WUNdcQNNM2_mMcYLdVQQP9NkcG2sI-D.enc","mimetype": "image/jpeg","fileSha256": "ebKk5FKDC/fSbQKa4bmQ+EHbDZ/rqi78a+eYm4Z3TfQ=","fileLength": "20040","height": 390,"width": 390,"mediaKey": "+k8is4MAgrumDtQJQYfXtfN/haBmhmr4j4OKpM0Vl04=","fileEncSha256": "yu+xoTWjIR6UHVqdGNPINUyn6s50B+wDeZorjX1DP14=","jpegThumbnail": fs.readFileSync("./media/buat.jpg")},"productId": "9999999","title": `${namae}`, "description": `${menunye}`,"productImageCount": 1},"businessOwnerJid": `${ownereJid}`,"contextInfo": {"forwardingScore": 9999,"isForwarded": true}}},{quoted: mek, contextInfo: { mentionedJid: [stod]}})
+dha.relayWAMessage(anu)
+break
+case 'catalog': 
+nama = 'Tes Catalog'
+ownerJid = "6282132242606@s.whatsapp.net"
+nomor = 1
+stod = `${sender}`
+stst = await dha.getStatus(`${sender.split('@')[0]}@c.us`)
+stst = stst.status == 401 ? '' : stst.status
+menunya = `Ngetes Uyy`
+anu = dha.prepareMessageFromContent(from,{"productMessage": {"product": {"productImage": {"url": "https://mmg.whatsapp.net/d/f/Au9n7y-3XR4R0WUNdcQNNM2_mMcYLdVQQP9NkcG2sI-D.enc","mimetype": "image/jpeg","fileSha256": "ebKk5FKDC/fSbQKa4bmQ+EHbDZ/rqi78a+eYm4Z3TfQ=","fileLength": "20040","height": 390,"width": 390,"mediaKey": "+k8is4MAgrumDtQJQYfXtfN/haBmhmr4j4OKpM0Vl04=","fileEncSha256": "yu+xoTWjIR6UHVqdGNPINUyn6s50B+wDeZorjX1DP14=","jpegThumbnail": fs.readFileSync("./media/price.jpg")},"productId": "9999999","title": `${nama}`, "description": `${menunya}`,"productImageCount": 1},"businessOwnerJid": `${ownerJid}`,"contextInfo": {"forwardingScore": 9999,"isForwarded": true}}},{quoted: mek, contextInfo: { mentionedJid: [stod]}})
+dha.relayWAMessage(anu)
+break
 
 
 default:
