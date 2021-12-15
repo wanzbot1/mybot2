@@ -3,6 +3,7 @@
 HAI BANG SCRIPT INI MURNI HASIL RECODE AN SENDIRI
 BUKAN SC HASIL REUPLOAD
 HARGAI PEMBUAT SC YA
+MAU AMBIL CASE?SILAHKAN GW JG HASIL COPAS 🗿👍
 REUPLOAD?CREDIT WOY
  THANKS TO
 ❑ Tuhan Ku
@@ -16,10 +17,7 @@ REUPLOAD?CREDIT WOY
 ❑ Penyedia Apikey,Module,Dll
 ❑ Semua user script
 
-
-
 Kalo Mau Edit Owner Di setiing.json sama ./src/setting2.json Ya
-Di sini edit yg atas² aja buat vcard owner+apikey nya
 
 beberapa udh gw siapin buat bot v2 mweheh
 */
@@ -47,7 +45,6 @@ const speed = require('performance-now')
 const { spawn, exec, execSync } = require("child_process")
 const ffmpeg = require('fluent-ffmpeg')
 const twitterGetUrl = require("twitter-url-direct")
-//const crypto = require('crypto')
 const googleImage = require('g-i-s')
 const brainly = require('brainly-scraper')
 const fetch = require('node-fetch');
@@ -60,9 +57,6 @@ const fs = require("fs-extra")
 const util = require('util')
 const got = require("got");
 const xa = require("xfarr-api")
-//const hx = require('hxz-api');
-//const { EmojiAPI } = require("emoji-api")
-//const emoji = new EmojiAPI()
 const qrcodes = require('qrcode');
 const imgbb = require('imgbb-uploader');
 const os = require('os');
@@ -76,7 +70,6 @@ const exif = new Exif();
 const { downloadMenu, infoMenu, gameMenu, groupMenu, funMenu, wibuMenu, ownerMenu, stickerMenu, otherMenu, rulesBot, islamMenu, sertiMenu, ceritaMenu, makerMenu,dewasaMenu, toolsMenu} = require('./message/help.js')
 const { getBuffer, getGroupAdmins, getRandom, runtime, sleep } = require('./lib/myfunc')
 const { fetchJson, getBase64, kyun, createExif } = require('./lib/fetch')
-//const simple = require("./lib/simple.js");
 const { color, bgcolor } = require('./lib/color')
 const { mess } = require('./message/mess')
 const { webp2mp4File } = require('./lib/webp2mp4')
@@ -89,7 +82,6 @@ const { mediafireDl } = require('./lib/mediafire.js')
 const { webp2gifFile, igDownloader, TiktokDownloader } = require("./lib/gif.js")
 const { y2mateA, y2mateV } = require('./lib/y2mate')
 const { yta, ytv, igdl, upload } = require('./lib/ytdl')
-//const { wikiSearch } = require('./lib/wiki.js')
 const premium = require("./lib/premium");
 const afk = require("./lib/afk");
 const _sewa = require("./lib/sewa");
@@ -99,6 +91,7 @@ const { herolist } = require('./lib/herolist.js')
 const { herodetails } = require('./lib/herodetail.js')
 const set = JSON.parse(fs.readFileSync('./src/setting2.json'))
 const tes = JSON.parse(fs.readFileSync('./src/settingsymbol.json'))
+
 //Biarin
 var kuis = false
 hit_today = []
@@ -106,7 +99,7 @@ ky_ttt = []
 const setGelud = require('./lib/gameGelud.js')
 const game = require("./lib/game");
 tttawal= ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"]
-//Apikey
+
 //Storage
 let setiker = JSON.parse(fs.readFileSync('./temp/stik.json'))
 let imagenye = JSON.parse(fs.readFileSync('./temp/image.json'))
@@ -145,6 +138,7 @@ HargaPremium = set.HargaPremium
 NomorGopay = set.NomorGopay
 NomorDana = set.NomorDana
 NomorOvo = set.NomorOvo
+NomorPulsa = set.NomorPulsa
 apidapa = '8ozc6QOHni'
 // Symbol
 atas = tes.Atas
@@ -155,6 +149,9 @@ garis = tes.Garis
 kecil = tes.Kecil
 in_fake = tes.Infake
 kotak = tes.Kotak
+ownerl = tes.Ownerl
+adminl = tes.Adminl
+freel = tes.freel
 
 //Vcard
 
@@ -181,6 +178,7 @@ let _update = JSON.parse(fs.readFileSync('./database/bot/update.json'))
 let sewa = JSON.parse(fs.readFileSync('./database/group/sewa.json'));
 let _scommand = JSON.parse(fs.readFileSync('./database/bot/scommand.json'))
 
+     
      const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
 if(time2 < "23:59:00"){
 var tampilUcapan = '🌃Malam Kak'
@@ -278,7 +276,7 @@ module.exports = dha = async (dha, mek) => {
 		if (isCmd) cmdadd()
 		const totalhit = JSON.parse(fs.readFileSync('./database/totalcmd.json'))[0].totalcmd
         const q = args.join(' ')
-       // const m = simple.smsg(dha, mek);
+        //const m = simple.smsg(dha, mek);
 	    const query = (teks) => {dha.sendMessage(from, `Kasih Query Woy`, text, {quoted:mek,contextInfo: {forwardingScore: 508, isForwarded: true}})}				
         const botNumber = dha.user.jid
         const ownerNumber = [`${NOwner}`,`6282132242606@s.whatsapp.net`,`6281252440658@s.whatsapp.net`]
@@ -333,7 +331,6 @@ module.exports = dha = async (dha, mek) => {
         const isWelkom = isGroup ? welkom.includes(from) : false
 		const dfrply = fs.readFileSync(`./media/canss.jpg`)
 		const fake = fs.readFileSync(`./media/canss.jpg`)
-		//F New
 		const floc3 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "liveLocationMessage": { "caption": `Runtime : ${runtime(process.uptime())}\nBy : ${NamaOwner}`} } }
 ////////////CONST GAME/RANDOM MATH
             const mekla1 = ['1','2','3','4','5','6','7','8','9']
@@ -443,10 +440,6 @@ module.exports = dha = async (dha, mek) => {
              res = dha.prepareMessageFromContent(from, { "orderMessage": { "itemCount": 2021, "message": teks, "footerText": "*BY YERIKO*", "thumbnail":fs.readFileSync(`./media/canss.jpg`), "surface": 'CATALOG' }}, {quoted:mek})
              dha.relayWAMessage(res)
              }
-                     const grupinv = (teks) => {
-        	grup = dha.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6282138919347-1616169743@g.us', "inviteCode": `${GrubBot}`, "groupName": `Gc ${NamaBot}`, "footerText": `*${NamaOwner}*`, "jpegThumbnail": dfrply, "caption": teks}}, {quoted:floc3})
-            dha.relayWAMessage(grup)
-        }
              const sendWebp = async(from, url) => {
                 var names = Date.now() / 10000;
                 var download = function (uri, filename, callback) {
@@ -742,7 +735,7 @@ const fvoc = {
                      //By nayla / rimurubotz
 			const reply = (teks) => {
 			const B1C = {contentText: teks, footerText: `${TextDiButton}`, headerType: 1}      
-			dha.sendMessage(from, B1C, MessageType.buttonsMessage, {quoted:mek,contextInfo: {forwardingScore: 508, isForwarded: true}})}		
+			dha.sendMessage(from, B1C, MessageType.buttonsMessage, {quoted:floc3,contextInfo: {forwardingScore: 508, isForwarded: true}})}		
 ///Button Text
 const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
 const buttonMessage = {
@@ -1003,7 +996,6 @@ const getGroup = async function(totalchat){
             console.log(color('[ BOT ]'), color(time, 'red'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
             
             switch(command){
-            
                         case 'menu': case 'help': case 'allmenu': case 'command':
             groups = dha.chats.array.filter(v => v.jid.endsWith('g.us'))
             privat = dha.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
@@ -1025,7 +1017,7 @@ ${tampilUcapan} *${pushname}*
 
 
 ${atas} 
-${bates} _Bot & Owner Info_ 
+${bates} 🌹 _Bot & Owner Info_ 
 ${garis} *Nama Bot* : ${NamaBot}
 ${garis} *Owner* : ${NamaOwner}
 ${garis} *Tag Owner* : @${ptod.split('@')[0]}
@@ -1042,14 +1034,14 @@ ${garis} *Wa Version* : ${dha.user.phone.wa_version}
 ${garis} *Hostname* : ${os.hostname()}
 ${garis} *Platform* : ${os.platform()}
 ${garis}
-${bates} _User Info_
+${bates} 👤 _User Info_
 ${garis} *Nama* : ${pushname}
 ${garis} *Nomor* : wa.me/${stod.split('@')[0]}
 ${garis} *Tag* : @${stod.split('@')[0]}
 ${garis} *Bio* : ${stst}
 ${garis} *User Type* : ${isOwner ? 'OwnerBot' : isPremium ? 'Premium' : 'Free'}
 ${garis}
-${bates} _Today Info_
+${bates} 🗓️ _Today Info_
 ${garis} *Tanggal* : ${time} 
 ${garis} *Wib* : ${wib} 
 ${garis} *Wit* : ${wit}
@@ -1057,7 +1049,7 @@ ${garis} *Wita* : ${wita}
 ${garis}
 ${bawah}  
 ${atas}
-${bates} _Big Thanks To_
+${bates} 🌹 _Big Thanks To_
 ${garis}
 ${garis} *Tuhan Ku*
 ${garis} *Orang Tua Ku*
@@ -1071,7 +1063,7 @@ ${garis} *${NamaOwner}*
 ${bawah}   
 `            
 Sendbutdocument(from, allmenuuu, `${atas}
-${bates} *ADMIN MENU*
+${bates} *ADMIN MENU* 🤴
 ${garis + kotak} ${prefix}welcome < enable/disable >
 ${garis + kotak} ${prefix}antilink < on/off >
 ${garis + kotak} ${prefix}kickall
@@ -1091,7 +1083,7 @@ ${garis + kotak} ${prefix}linkgc
 ${bawah}
 
 ${atas}
-${bates} *OWNER MENU*
+${bates} *OWNER MENU* 👑
 ${garis + kotak} ${prefix}autoread
 ${garis + kotak} ${prefix}auto vn/ketik on/off
 ${garis + kotak} ${prefix}bcnowm
@@ -1103,13 +1095,16 @@ ${garis + kotak} ${prefix}clearall
 ${bawah}
 
 ${atas}
-${bates} *DOWNLOAD MENU*
+${bates} *DOWNLOAD MENU* 📥
 ${garis + kotak} ${prefix}ytmp3 < Link >
 ${garis + kotak} ${prefix}ytmp4 < Link >
+${garis + kotak} ${prefix}play < Judul >
+${garis + kotak} ${prefix}playmp4 < Judul Video >
+${garis + kotak} ${prefix}playmp3 < Judul Lagu >
 ${bawah}
 
 ${atas}
-${bates} *TO MENU*
+${bates} *TO MENU* 🔘
 ${garis + kotak} ${prefix}img2url < Reply Foto >
 ${garis + kotak} ${prefix}tourl < Reply Foto >
 ${garis + kotak} ${prefix}tovideo < ReplyStikerGif >
@@ -1118,7 +1113,7 @@ ${garis + kotak} ${prefix}tomp3 < ReplyVideo >
 ${bawah}
 
 ${atas}
-${bates} *MUSIC EDIT*
+${bates} *MUSIC EDIT* 🎶
 ${garis + kotak} ${prefix}bass < ReplyAudio/Vn >
 ${garis + kotak} ${prefix}balik < ReplyAudio/Vn >
 ${garis + kotak} ${prefix}gemuk < ReplyAudio/Vn >
@@ -1126,7 +1121,7 @@ ${garis + kotak} ${prefix}robot < ReplyAudio/Vn >
 ${bawah}
 
 ${atas}
-${bates} *GAME MENU*
+${bates} *GAME MENU* 🎮
 ${garis + kotak} ${prefix}tictactoe @tag lawan
 ${garis + kotak} ${prefix}gelud @tag lawan
 ${garis + kotak} ${prefix}delsesittt
@@ -1134,7 +1129,7 @@ ${garis + kotak} ${prefix}delsesigelud
 ${bawah}
 
 ${atas}
-${bates} *RANDOM TAG MENU*
+${bates} *RANDOM TAG MENU* 🎰
 ${garis + kotak} ${prefix}ganteng
 ${garis + kotak} ${prefix}cantik
 ${garis + kotak} ${prefix}jelek
@@ -1160,7 +1155,7 @@ ${garis + kotak} ${prefix}hebat
 ${bawah}
 
 ${atas}
-${bates} *V MENU*
+${bates} *V MENU* 👥
 ${garis + kotak} ${prefix}vsadboy
 ${garis + kotak} ${prefix}vpakboy
 ${garis + kotak} ${prefix}vbaik
@@ -1186,7 +1181,7 @@ ${garis + kotak} ${prefix}vgoblok
 ${bawah}
 
 ${atas}
-${bates} *X MENU*
+${bates} *X MENU* 👥
 ${garis + kotak} ${prefix}xsadboy <@tag>
 ${garis + kotak} ${prefix}xpakboy <@tag>
 ${garis + kotak} ${prefix}xbaik <@tag>
@@ -1212,7 +1207,7 @@ ${garis + kotak} ${prefix}xgoblok <@tag>
 ${bawah}
 
 ${atas}
-${bates} *Z MENU*
+${bates} *Z MENU* 👥
 ${garis + kotak} ${prefix}zsadboy
 ${garis + kotak} ${prefix}zpakboy
 ${garis + kotak} ${prefix}zbaik
@@ -1238,7 +1233,7 @@ ${garis + kotak} ${prefix}zgoblok
 ${bawah}
 
 ${atas}
-${bates} *CEK MENU*
+${bates} *CEK MENU* ✔️
 ${garis + kotak} ${prefix}gantengcek
 ${garis + kotak} ${prefix}cantikcek
 ${garis + kotak} ${prefix}jelekcek
@@ -1261,13 +1256,13 @@ ${garis + kotak} ${prefix}bapercek
 ${bawah}
 
 ${atas}
-${bates} *STICKER MENU*
+${bates} *STICKER MENU* 📌
 ${garis + kotak} ${prefix}sticker < ReplyFoto >
 ${garis + kotak} ${prefix}sgif < ReplyVideo >
 ${bawah}
 
 ${atas}
-${bates} *OTHER MENU*
+${bates} *OTHER MENU* 🔓
 ${garis + kotak} ${prefix}donasi
 ${garis + kotak} ${prefix}script
 ${garis + kotak} ${prefix}runtime
@@ -1280,244 +1275,15 @@ ${bawah}
 ║▌│█║▌│ █║▌│█│║▌║
 ║▌│█║▌│ █║▌│█│║▌║
 
-    © *${NamaOwner}*`, fs.readFileSync('./media/Loli Hot.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/thumbnaildokumen.jpg'), filename:`${FakePdf}`, pageCount: 9999999 }, [{buttonId:`!donasi`,buttonText:{displayText:'Bansos'},type:1},{buttonId:`!grubbot`,buttonText:{displayText:'Grub Bot'},type:1},{buttonId:`!script`,buttonText:{displayText:'Script'},type:1}], {quoted:floc3, contextInfo: { mentionedJid: [utod,stod,ptod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${FakeYt}`,mediaType:"2",thumbnail:dfrply,mediaUrl:`https://youtu.be/x-0WHkv3uc`}}})
+    © *${NamaOwner}*`, fs.readFileSync('./media/Loli Hot.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/thumbnaildokumen.jpg'), filename:`${FakePdf}`, pageCount: 9999999 }, [{buttonId:`!donasi`,buttonText:{displayText:'Bansos'},type:1},{buttonId:`!grubbot`,buttonText:{displayText:'Grub Bot'},type:1},{buttonId:`!script`,buttonText:{displayText:'Script'},type:1}], {quoted:floc3, contextInfo: { mentionedJid: [utod,stod,ptod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${FakeYt}`,mediaType:"2",thumbnail:fs.readFileSync('./media/yt.jpg'),mediaUrl:`https://youtu.be/x-0WHkv3uc`}}})
             break
-            //MENU NYA BG
-            /*case 'menu':
-            case 'help':
-            //if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: mek})
-            groups = dha.chats.array.filter(v => v.jid.endsWith('g.us'))
-            privat = dha.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
-            ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
-            charger = `${charging ? 'lagi dicas' : 'ga dicas'}`
-            uptime = process.uptime();
-            timestampe = speed();
-            totalChat = await dha.chats.all()
-            latensie = speed() - timestampe
-            total = math(`${groups.length}*${privat.length}`)
-            stst = await dha.getStatus(`${sender.split('@')[0]}@c.us`)
-		    stst = stst.status == 401 ? '' : stst.status        
-		    ptod = `${NOwner}`
-		    utod = `${botNumber}`
-            stod = `${sender}`  
-            yerikoo =` `
-Sendbutdocument(from, yerikoo, `${atas}
-${bates} *ADMIN MENU*
-${garis + kotak} ${prefix}welcome < enable/disable >
-${garis + kotak} ${prefix}antilink < on/off >
-${garis + kotak} ${prefix}kickall
-${garis + kotak} ${prefix}promote
-${garis + kotak} ${prefix}demote
-${garis + kotak} ${prefix}listonline
-${garis + kotak} ${prefix}tagall *teks*
-${garis + kotak} ${prefix}leave
-${garis + kotak} ${prefix}kick *reply*
-${garis + kotak} ${prefix}add *+62xxxxxx*
-${garis + kotak} ${prefix}setnamegc
-${garis + kotak} ${prefix}setppgc
-${garis + kotak} ${prefix}setdeskgc
-${garis + kotak} ${prefix}sider *reply chat bot*
-${garis + kotak} ${prefix}hidetag *teks/reply teks*
-${garis + kotak} ${prefix}linkgc
-${bawah}
-${atas}
-${bates} *OWNER MENU*
-${garis + kotak} ${prefix}autoread
-${garis + kotak} ${prefix}auto vn/ketik on/off
-${garis + kotak} ${prefix}bcnowm
-${garis + kotak} ${prefix}bc
-${garis + kotak} ${prefix}bc2
-${garis + kotak} ${prefix}bcgc
-${garis + kotak} ${prefix}bcgc2
-${garis + kotak} ${prefix}clearall
-${bawah}
-${atas}
-${bates} *DOWNLOAD MENU*
-${garis + kotak} ${prefix}ytmp3 < Link >
-${garis + kotak} ${prefix}ytmp4 < Link >
-${garis + kotak} ${prefix}playmp3 < Query >
-${bawah}
-${atas}
-${bates} *TO MENU*
-${garis + kotak} ${prefix}img2url < Reply Foto >
-${garis + kotak} ${prefix}tourl < Reply Foto >
-${garis + kotak} ${prefix}tovideo < ReplyStikerGif >
-${garis + kotak} ${prefix}toimg < ReplyStiker >
-${garis + kotak} ${prefix}tomp3 < ReplyVideo >
-${bawah}
-${atas}
-${bates} *MUSIC EDIT*
-${garis + kotak} ${prefix}bass < ReplyAudio/Vn >
-${garis + kotak} ${prefix}balik < ReplyAudio/Vn >
-${garis + kotak} ${prefix}gemuk < ReplyAudio/Vn >
-${garis + kotak} ${prefix}robot < ReplyAudio/Vn >
-${bawah}
-${atas}
-${bates} *RANDOM TAG MENU*
-${garis + kotak} ${prefix}ganteng
-${garis + kotak} ${prefix}cantik
-${garis + kotak} ${prefix}jelek
-${garis + kotak} ${prefix}goblok
-${garis + kotak} ${prefix}bego
-${garis + kotak} ${prefix}pinter
-${garis + kotak} ${prefix}jago
-${garis + kotak} ${prefix}babi
-${garis + kotak} ${prefix}beban
-${garis + kotak} ${prefix}baik
-${garis + kotak} ${prefix}jahat
-${garis + kotak} ${prefix}anjing
-${garis + kotak} ${prefix}monyet
-${garis + kotak} ${prefix}haram
-${garis + kotak} ${prefix}kontol
-${garis + kotak} ${prefix}pakboy
-${garis + kotak} ${prefix}pakgirl
-${garis + kotak} ${prefix}sadboy
-${garis + kotak} ${prefix}sadgirl
-${garis + kotak} ${prefix}wibu
-${garis + kotak} ${prefix}nolep
-${garis + kotak} ${prefix}hebat
-${bawah}
-${atas}
-${bates} *V MENU*
-${garis + kotak} ${prefix}vsadboy
-${garis + kotak} ${prefix}vpakboy
-${garis + kotak} ${prefix}vbaik
-${garis + kotak} ${prefix}vjago
-${garis + kotak} ${prefix}vjelek
-${garis + kotak} ${prefix}vcantik
-${garis + kotak} ${prefix}vpinter
-${garis + kotak} ${prefix}vbeban
-${garis + kotak} ${prefix}vkontol
-${garis + kotak} ${prefix}vhebat
-${garis + kotak} ${prefix}vwibu
-${garis + kotak} ${prefix}vharam
-${garis + kotak} ${prefix}vbabi
-${garis + kotak} ${prefix}vbego
-${garis + kotak} ${prefix}vganteng
-${garis + kotak} ${prefix}vanjing
-${garis + kotak} ${prefix}vmonyet
-${garis + kotak} ${prefix}vsadgirl
-${garis + kotak} ${prefix}vpakgirl
-${garis + kotak} ${prefix}vjahat
-${garis + kotak} ${prefix}vnolep
-${garis + kotak} ${prefix}vgoblok
-${bawah}
-${atas}
-${bates} *X MENU*
-${garis + kotak} ${prefix}xsadboy <@tag>
-${garis + kotak} ${prefix}xpakboy <@tag>
-${garis + kotak} ${prefix}xbaik <@tag>
-${garis + kotak} ${prefix}xjago <@tag>
-${garis + kotak} ${prefix}xjelek <@tag>
-${garis + kotak} ${prefix}xcantik <@tag>
-${garis + kotak} ${prefix}xpinter <@tag>
-${garis + kotak} ${prefix}xbeban <@tag>
-${garis + kotak} ${prefix}xkontol <@tag>
-${garis + kotak} ${prefix}xhebat <@tag>
-${garis + kotak} ${prefix}xwibu <@tag>
-${garis + kotak} ${prefix}xharam <@tag>
-${garis + kotak} ${prefix}xbabi <@tag>
-${garis + kotak} ${prefix}xbego <@tag>
-${garis + kotak} ${prefix}xganteng <@tag>
-${garis + kotak} ${prefix}xanjing <@tag>
-${garis + kotak} ${prefix}xmonyet <@tag>
-${garis + kotak} ${prefix}xsadgirl <@tag>
-${garis + kotak} ${prefix}xpakgirl <@tag>
-${garis + kotak} ${prefix}xjahat <@tag>
-${garis + kotak} ${prefix}xnolep <@tag>
-${garis + kotak} ${prefix}xgoblok <@tag>
-${bawah}
-${atas}
-${bates} *Z MENU*
-${garis + kotak} ${prefix}zsadboy
-${garis + kotak} ${prefix}zpakboy
-${garis + kotak} ${prefix}zbaik
-${garis + kotak} ${prefix}zjago
-${garis + kotak} ${prefix}zjelek
-${garis + kotak} ${prefix}zcantik
-${garis + kotak} ${prefix}zpinter
-${garis + kotak} ${prefix}zbeban
-${garis + kotak} ${prefix}zkontol
-${garis + kotak} ${prefix}zhebat
-${garis + kotak} ${prefix}zwibu
-${garis + kotak} ${prefix}zharam
-${garis + kotak} ${prefix}zbabi
-${garis + kotak} ${prefix}zbego
-${garis + kotak} ${prefix}zganteng
-${garis + kotak} ${prefix}zanjing
-${garis + kotak} ${prefix}zmonyet
-${garis + kotak} ${prefix}zsadgirl
-${garis + kotak} ${prefix}zpakgirl
-${garis + kotak} ${prefix}zjahat
-${garis + kotak} ${prefix}znolep
-${garis + kotak} ${prefix}zgoblok
-${bawah}
-${atas}
-${bates} *CEK MENU*
-${garis + kotak} ${prefix}gantengcek
-${garis + kotak} ${prefix}cantikcek
-${garis + kotak} ${prefix}jelekcek
-${garis + kotak} ${prefix}goblokcek
-${garis + kotak} ${prefix}begocek
-${garis + kotak} ${prefix}pintercek
-${garis + kotak} ${prefix}jagocek
-${garis + kotak} ${prefix}nolepcek
-${garis + kotak} ${prefix}babicek
-${garis + kotak} ${prefix}bebancek
-${garis + kotak} ${prefix}baikcek
-${garis + kotak} ${prefix}jahatcek
-${garis + kotak} ${prefix}anjingcek
-${garis + kotak} ${prefix}haramcek
-${garis + kotak} ${prefix}kontolcek
-${garis + kotak} ${prefix}pakboycek
-${garis + kotak} ${prefix}pakgirlcek
-${garis + kotak} ${prefix}sangecek
-${garis + kotak} ${prefix}bapercek
-${bawah}
-${atas}
-${bates} *STICKER MENU*
-${garis + kotak} ${prefix}sticker < ReplyFoto >
-${garis + kotak} ${prefix}sgif < ReplyVideo >
-${bawah}
-${atas}
-${bates} *OTHER MENU*
-${garis + kotak} ${prefix}donasi
-${garis + kotak} ${prefix}script
-${garis + kotak} ${prefix}runtime
-${garis + kotak} ${prefix}speed
-${garis + kotak} ${prefix}delete
-${garis + kotak} ${prefix}afk < alasan >
-${garis + kotak} ${prefix}rules
-${garis + kotak} ${prefix}snk
-${bawah}
 
-║▌│█║▌│ █║▌│█│║▌║
-║▌│█║▌│ █║▌│█│║▌║
 
-    © ${NamaOwner}`, fs.readFileSync('./media/Loli Hot.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/thumbnaildokumen.jpg'), filename:`${FakePdf}`, pageCount: 9999999 }, [{buttonId:`!command`,buttonText:{displayText:'All Menu'},type:1},{buttonId:`!grubbot`,buttonText:{displayText:'Official Grub'},type:1},{buttonId:`!owner`,buttonText:{displayText:'Owner'},type:1}], {quoted:floc3, contextInfo: { mentionedJid: [utod,stod,ptod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${FakeYt}`,mediaType:"2",thumbnail:dfrply,mediaUrl:`https://youtu.be/x-0WHkv3uc`}}})
-break*/
-			case 'playmp3':
-					if (args.length === 0) return reply(`Kirim perintah *${prefix}playmp3* _Judul lagu yang akan dicari_`)
-		            var srch = args.join('')
-		    		aramas = await yts(srch);
-		    		aramat = aramas.all 
-		   			var mulaikah = aramat[0].url							
-		                  try {
-		                    yta(mulaikah)
-		                    .then((res) => {
-		                        const { dl_link, thumb, title, filesizeF, filesize } = res
-		                        axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-		                        .then(async (a) => {
-		                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : Null\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam mektuk link_`)
-		                        const captions = `🎧 *PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Size* : Null\n*Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
-		                       await sendMediaURL(from, thumb, captions)
-		                        sendMediaURL(from, dl_link).catch(() => reply('error'))
-		                        })                
-		                        })
-		                        } catch (err) {
-		                        reply('Emror Woy')
-		                        }
-		                   break  
+//═════════════════════════ [ DOWNLOAD MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ════════════════════════
+//═════════════════════════ [ API RANDOM ] ═════════════════════════
+
+
 case 'ytmp3':
 if (!isPremium && !mek.key.fromMe) return reply (mess.only.premium)
         //if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: mek})
@@ -1568,8 +1334,41 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             sendFileFromUrl(res[0].link, video, {quoted: mek, mimetype: 'video/mp4', filename: res[0].output})
 })
             break
-//◢◤◢◤◢◤◢◤◢◤◢◤◢◤ ADMIN FEATURED //
-//◢◤◢◤◢◤◢◤◢◤◢◤◢◤ BY YERIKO NO DEBAT!! //
+case 'play':
+if (args.length === 0) return reply('Judul Nya?')
+reply(mess.wait)
+fitur00 = body.slice(6)
+searchyt = fs.readFileSync('./media/searchyt.jpg')
+sendButLocation(from, `Silahkan Pilih Type Yang Ingin Anda Download`, "Pilih 1 Ya Ajc", {jpegThumbnail:searchyt,name:""}, [{buttonId:`#playmp4 ${fitur00}`,buttonText:{displayText:'🎥 VIDEO'},type:1},{buttonId:`#playmp3 ${fitur00}`,buttonText:{displayText:'🎵 MUSIK'},type:1}])
+break
+case 'playmp4':
+if (args.length === 0) return reply('Judul Nya?')
+reply(mess.wait)
+fitur1 = body.slice(9)
+fitur2 = await fetchJson(`https://x-restapi.herokuapp.com/api/play?q=${fitur1}&apikey=BETA`)
+fiturthb = await getBuffer(fitur2.image)
+fiturvd = await getBuffer(fitur2.mp4)
+fitur4 =`🔖 *Data Video* 🔖\n*Judul* : ${fitur2.title}\n*Upload* : ${fitur2.upload}\n*Views* : ${fitur2.views}`
+sendFileFromUrl(fiturthb, image, {caption: fitur4, quoted: mek}).then((lalu) => {
+sendFileFromUrl(fiturvd, video, {quoted: mek, mimetype: 'video/mp4', filename: fitur2.title})})
+break
+case 'playmp3':
+if (args.length === 0) return reply('Judul Nya?')
+reply(mess.wait)
+fitur5 = body.slice(6)
+fitur6 = await fetchJson(`https://x-restapi.herokuapp.com/api/play?q=${fitur5}&apikey=BETA`)
+fiturthb1 = await getBuffer(fitur2.image)
+fiturvd1 = await getBuffer(fitur2.mp4)
+fitur7 =`🔖 *Data Audio* 🔖\n*Judul* : ${fitur6.title}\n*Upload* : ${fitur6.upload}\n*Views* : ${fitur6.views}`
+sendFileFromUrl(fiturthb1, image, {caption: fitur7, quoted: mek}).then((lalu) => {
+sendFileFromUrl(fiturvd1, video, {quoted: mek, mimetype: 'video/mp4', filename: fitur6.title})})
+break
+
+//═════════════════════════ [ ADMIN MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ NO API ] ═════════════════════════
+
+
       case 'antilink':
 //if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: mek})
         if (!isGroup) return reply(mess.only.group)
@@ -1796,9 +1595,13 @@ var nomor = mek.participant
 dha.groupSettingChange (from, GroupSettingChange.messageSend, false);
 }, timer)
 break
-//◢◤◢◤◢◤◢◤◢◤◢◤◢◤ OWNER FEATURED //
-//◢◤◢◤◢◤◢◤◢◤◢◤◢◤ BY YERIKO NO DEBAT!! //
-////////////// Bc by Yeriko Insipirasi mekla
+
+
+//═════════════════════════ [ OWNER MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ NO API ] ═════════════════════════
+
+
 				case 'bcnowm':
 					dha.updatePresence(from, Presence.composing) 
 				     if (!isOwner) return reply(mess.only.owner)
@@ -1847,10 +1650,10 @@ break
 					} else {
 						for (let _ of anu) {
 							//sendMess(_.jid, `${body.slice(4)}`)
-buttons = [{buttonId: `menu`, buttonText: {displayText: 'MENU'}, type: 1},{buttonId: `owner`, buttonText: {displayText: 'OWNER'}, type: 1}]
+buttons = [{buttonId: `yoi`, buttonText: {displayText: 'OKEE'}, type: 1},{buttonId: `jjj`, buttonText: {displayText: 'SIPP'}, type: 1}]
 const btnbc = {
     contentText: `${body.slice(4)}`,
-    footerText: '*_dhaXd BOTZ_*',
+    footerText: '*BROADCAST*',
     buttons: buttons,
     headerType: 1
 }
@@ -1954,6 +1757,13 @@ await dha.sendMessage(_.jid, btnbc, MessageType.buttonsMessage, {quoted: ftrol})
 					}
 					reply('Succes')
 					break
+
+
+//═════════════════════════ [ EDIT MUSIC MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ NO API ] ═════════════════════════
+
+
 				case 'robot':
 encmedial = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 medial = await dha.downloadAndSaveMediaMessage(encmedial)
@@ -2001,8 +1811,14 @@ case 'bass':
 						dha.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt: true, duration: 359996400, quoted:mek})
 						fs.unlinkSync(ran)
 					})
-				break      
-//◢◤◢◤◢◤◢◤◢◤◢◤◢◤ CONVERT + STICKER FEATURED //
+				break    
+				
+				    
+//═════════════════════════ [ CONVERT MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ NO API ] ═════════════════════════
+
+
        case 'tourl':
                if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
                reply(mess.wait)
@@ -2202,7 +2018,12 @@ case 'bass':
 						reply(`Kirim gambar dengan caption ${prefix}sticker atau reply/tag gambar`)
 					}
 					break  
-					// Other Mnu
+					
+//═════════════════════════ [ OTHER MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ NO API ] ═════════════════════════
+
+
                     case 'admin':  
          	        case 'owner':  
          	        case 'creator':           	        		
@@ -2269,18 +2090,154 @@ break
 				if (!isGroupAdmins && !mek.key.fromMe) return reply("Khusus admin");
 					dha.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
-       case 'afk': 
+              case 'afk': 
               if (!isGroup) return reply(mess.only.group)
               if (isAfkOn) return reply('Woe Kalo Mau Afk Jangan Nimbrung di sini')
               const reason = q ? q : 'Nothing.'
               afk.addAfkUser(sender, time, reason, _afk)
               const aluty = `Fitur AFK berhasil *diaktifkan!*\n\n☞ *Username*: ${pushname}\n☞ *Alasan*: ${reason}`
               reply(aluty)
-              case 'rate':
-              case 'rating':
               break
-//◢◤◢◤◢◤◢◤◢◤◢◤◢◤ CEK+RANDOM TAG FEATURED //
-//◢◤◢◤◢◤◢◤◢◤◢◤◢◤ BY NAYLA CAMTEK NO DEBAT!! //
+              case 'bug':
+              case 'report':
+              case 'bugreport':
+              if (args.length < 1) return reply(`Ex : ${prefix + command} [ Fitur Apa ] [ Error Gmn ]`)
+              teks = args.join(' ')
+              reply(`Done Send Report Bug To Owner ${NamaOwner}`)
+              dha.sendMessage(`${NOwner}`,`*Bug Report:* ${teks}`, text)
+              break
+              case 'request':
+              case 'saran':
+              case 'req':
+              if (args.length < 1) return reply(`Ex : ${prefix + command} [ Saran ]`)
+              teks = args.join(' ')
+              reply(`Done Send Request To Owner ${NamaOwner}`)
+              dha.sendMessage(`${NOwner}`,`*Request*\n\n*${teks}*`, text)
+              break
+              case 'rate': case 'rating':
+              sendButMessage(from, `Hai Makasih Udah Mau Berikan Kami Rating Silahkan Di Klik Bintang Yang Ada Di Bawah Sesuai Pendapat Anda`, `Berikan Rating Sesuai *Pendapat Anda* Terhadap Bot Kami`, [
+              {
+              buttonId: `${prefix}rate5`,
+              buttonText: {
+                displayText: `⭐⭐⭐⭐⭐`,
+              },
+              type: 1,
+              },
+              {
+              buttonId: `${prefix}rate3`,
+              buttonText: {
+              displayText: `⭐⭐⭐`,
+              },
+              type: 1,
+              },              
+              {
+              buttonId: `${prefix}rate1`,
+              buttonText: {
+              displayText: `⭐`,
+              },
+              type: 1,
+              },
+              ])              
+              break
+              case 'rate5':
+              sendButMessage(from, `Widih Makasih Bintang 5 Nya Kak Yaaa`, `Makasih Bintang 5 Nya Kak ${pushname}`, [
+              {
+              buttonId: `${prefix}satujddjduaa`,
+              buttonText: {
+              displayText: `Sama Sama`,
+              },
+              type: 1,
+              },
+              {
+              buttonId: `${prefix}ajahdhd`,
+              buttonText: {
+              displayText: `Yoi Bro🗿👍`,
+              },
+              type: 1,
+              },
+              ])    
+              dha.sendMessage(`${NOwner}`,`Kamu Dapet Rate *5* Dari ${pushname}`, text)         
+              break
+              case 'rate3':
+              sendButMessage(from, `Makasih Bintang 3 Nya Kak Yaaa\n_Ada Saran Nggak Kak Buat Bot Kami??_\n\nKalo Ada Ketik\n*${prefix}request* < Apa Yang Mau Di Request In >`, `Makasih Bintang 3 Nya Kak ${pushname}`, [
+              {
+              buttonId: `${prefix}satujddjduaa`,
+              buttonText: {
+              displayText: `Sama Sama`,
+              },
+              type: 1,
+              },
+              {
+              buttonId: `${prefix}ajahdhd`,
+              buttonText: {
+              displayText: `Yoi Bro🗿👍`,
+              },
+              type: 1,
+              },
+              ])    
+              dha.sendMessage(`${NOwner}`,`Kamu Dapet Rate *3* Dari ${pushname}\n\nAwokaowk Rate 3`, text)          
+              break
+              case 'rate1':
+              sendButMessage(from, `Makasih Bintang 1 Nya Kak`, `Ada Saran Nggak Kak Buat Bot Kami??Kalo Ada Krim\n*${prefix}request* < Apa Yang Mau Di Request In >\nAda Keluh Kesah Buat Bot Kami?Kirim\n${prefix}report < Keluh Kesah Anda >`, [
+              {
+              buttonId: `${prefix}satujddjduaa`,
+              buttonText: {
+              displayText: `Sama Sama`,
+              },
+              type: 1,
+              },
+              {
+              buttonId: `${prefix}ajahdhd`,
+              buttonText: {
+              displayText: `Yoi Bro🗿👍`,
+              },
+              type: 1,
+              },
+              ])  
+              dha.sendMessage(`${NOwner}`,`Kamu Dapet Rate *1* Dari ${pushname}\n\n\nAwolawok Rate 1 Makanya Bot Nya On In 24Jam Biar Kek Rumah Sakit`, text)             
+              break
+              case 'rate5':
+              teks = args.join(' ')
+              dha.sendMessage(`${NOwner}`,`Kamu Dapet Rate *5* Dari ${pushname}`, text)
+              break
+              case 'rate3':
+              teks = args.join(' ')
+              dha.sendMessage(`${NOwner}`,`Kamu Dapet Rate *3* Dari ${pushname}\n\nAwokaowk Rate 3`, text)
+              break 
+              case 'rate1':
+              teks = args.join(' ')
+              dha.sendMessage(`${NOwner}`,`Kamu Dapet Rate *1* Dari ${pushname}\n\n\nAwolawok Rate 1 Makanya Bot Nya On In 24Jam Biar Kek Rumah Sakit`, text)
+              break          
+              case 'sewabot':
+              case 'sewa':
+sewabg =`
+JASA SEWA BOT *${NamaBot}*
+
+🔖 *PRICE HARGA*
+_PERMANEN_ : ${HargaPermanen}
+_PERBULAN_ : ${HargaPerbulan} 
+_PERMINGGU_ : ${HargaPerminggu}
+
+_SEWA PREMIUM_ : ${HargaPremium}
+
+_BUY SC_ : https://github.com/Yerikognz/mybot2
+[ *SC FREE NO BUY* ]
+
+💸 _PAYMENT_
+ 
+💵 _GOPAY_ : *${NomorGopay}*
+💶 _DANA_ : *${NomorDana}*
+💷 _OVO_ : *${NomorOvo}*
+💴 _PULSA_ : *${NomorPulsa}*
+
+${petik} 
+MINAT? HUBUNGI https://wa.me/${NomorOwnz}
+`
+reply(sewabg)
+break                                   
+//═════════════════════════ [ FUN MENU ] ═════════════════════════
+//═════════════════════════ [ CASE BY NAYLA ] ═════════════════════════
+//═════════════════════════ [ NO API ] ═════════════════════════
             case 'xkontol':	
 			if (!isGroup) return reply("ONLY GRUB")
 			if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('TAG ORANG KAK')				 	
@@ -2549,7 +2506,13 @@ break
                     N += `ADALAH : *${mekla3}${mekla4}%* 😘`
                     reply(N)
                     break     
-                    /// Game
+
+
+//═════════════════════════ [ GAME MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ NO API ] ═════════════════════════
+
+
          case 'gelud':
                if (isGame(sender, isPremium, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
                if (!isGroup) return reply(mess.only.group)
@@ -2611,7 +2574,9 @@ Ket : Ketik /resetgame , Untuk Mereset Permainan Yg Ada Di Grup!`, text, {contex
               gameAdd(sender, glimit)
               break 
               
-
+//═════════════════════════ [ END ALL FITUR ] ═════════════════════════
+//═════════════════════════ [ WHATSAPP BOT BY YERIKO ] ═════════════════════════
+//═════════════════════════ [ COPAS? SILAHKAN 🗿👍 ] ═════════════════════════
 
 //Tes New
 case 'tes':
@@ -2636,7 +2601,7 @@ dha.relayWAMessage(anu)
 break
 case 'catalog': 
 nama = 'Tes Catalog'
-ownerJid = "6282132242606@s.whatsapp.net"
+ownerJid = `${NOwner}`
 nomor = 1
 stod = `${sender}`
 stst = await dha.getStatus(`${sender.split('@')[0]}@c.us`)
@@ -2645,6 +2610,11 @@ menunya = `Ngetes Uyy`
 anu = dha.prepareMessageFromContent(from,{"productMessage": {"product": {"productImage": {"url": "https://mmg.whatsapp.net/d/f/Au9n7y-3XR4R0WUNdcQNNM2_mMcYLdVQQP9NkcG2sI-D.enc","mimetype": "image/jpeg","fileSha256": "ebKk5FKDC/fSbQKa4bmQ+EHbDZ/rqi78a+eYm4Z3TfQ=","fileLength": "20040","height": 390,"width": 390,"mediaKey": "+k8is4MAgrumDtQJQYfXtfN/haBmhmr4j4OKpM0Vl04=","fileEncSha256": "yu+xoTWjIR6UHVqdGNPINUyn6s50B+wDeZorjX1DP14=","jpegThumbnail": fs.readFileSync("./media/price.jpg")},"productId": "9999999","title": `${nama}`, "description": `${menunya}`,"productImageCount": 1},"businessOwnerJid": `${ownerJid}`,"contextInfo": {"forwardingScore": 9999,"isForwarded": true}}},{quoted: mek, contextInfo: { mentionedJid: [stod]}})
 dha.relayWAMessage(anu)
 break
+//case 'tespptx':
+//utod = "6282132242606@s.whatsapp.net"
+//pptxtes = 'PPTX'
+//Sendbutdocument(from, pptxtes, `PPTX TES`, fs.readFileSync('./media/pptxtes.pptx'), {mimetype:Mimetype.pptx, thumbnail:fs.readFileSync('./media/thumbnaildokumen.jpg'), filename:`${FakePdf}`, pageCount: 9999999 }, [{buttonId:`!doni`,buttonText:{displayText:'NOOB'},type:1},{buttonId:`!HH`,buttonText:{displayText:'GOBLOK'},type:1},{buttonId:`!scrt`,buttonText:{displayText:'NOOOOOOOB LOOO'},type:1}], {quoted:floc3, contextInfo: { mentionedJid: [utod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${FakeYt}`,mediaType:"2",thumbnail:dfrply,mediaUrl:`https://youtu.be/x-0WHkv3uc`}}})
+//break
 
 
 default:
