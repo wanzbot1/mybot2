@@ -1098,9 +1098,6 @@ ${atas}
 ${bates} *DOWNLOAD MENU* 📥
 ${garis + kotak} ${prefix}ytmp3 < Link >
 ${garis + kotak} ${prefix}ytmp4 < Link >
-${garis + kotak} ${prefix}play < Judul >
-${garis + kotak} ${prefix}playmp4 < Judul Video >
-${garis + kotak} ${prefix}playmp3 < Judul Lagu >
 ${bawah}
 
 ${atas}
@@ -1334,7 +1331,7 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             sendFileFromUrl(res[0].link, video, {quoted: mek, mimetype: 'video/mp4', filename: res[0].output})
 })
             break
-case 'play':
+/*case 'play':
 if (args.length === 0) return reply('Judul Nya?')
 reply(mess.wait)
 fitur00 = body.slice(6)
@@ -1362,7 +1359,7 @@ fiturvd1 = await getBuffer(fitur2.mp4)
 fitur7 =`🔖 *Data Audio* 🔖\n*Judul* : ${fitur6.title}\n*Upload* : ${fitur6.upload}\n*Views* : ${fitur6.views}`
 sendFileFromUrl(fiturthb1, image, {caption: fitur7, quoted: mek}).then((lalu) => {
 sendFileFromUrl(fiturvd1, video, {quoted: mek, mimetype: 'video/mp4', filename: fitur6.title})})
-break
+break*/
 
 //═════════════════════════ [ ADMIN MENU ] ═════════════════════════
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
