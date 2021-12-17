@@ -130,6 +130,7 @@ GrubBot2 = set.GrubBot2
 FakePdf = set.FakePdf
 FakeYt = set.FakeYt
 FakeText = set.FakeText
+FakeLoc = set.FakeReply
 TextDiButton = set.TextDiButton
 HargaPermanen = set.HargaPermanen
 HargaPerbulan = set.HargaPerbulan
@@ -331,7 +332,7 @@ module.exports = dha = async (dha, mek) => {
         const isWelkom = isGroup ? welkom.includes(from) : false
 		const dfrply = fs.readFileSync(`./media/canss.jpg`)
 		const fake = fs.readFileSync(`./media/canss.jpg`)
-		const floc3 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "liveLocationMessage": { "caption": `Runtime : ${runtime(process.uptime())}\nBy : ${NamaOwner}`} } }
+		const floc3 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "liveLocationMessage": { "caption": `Runtime : ${runtime(process.uptime())}\n${FakeLoc}`} } }
 ////////////CONST GAME/RANDOM MATH
             const mekla1 = ['1','2','3','4','5','6','7','8','9']
             const mekla2 = ['1','2','3','4','5','6','7','8','9'] 
@@ -1115,6 +1116,21 @@ ${garis + kotak} ${prefix}bass < ReplyAudio/Vn >
 ${garis + kotak} ${prefix}balik < ReplyAudio/Vn >
 ${garis + kotak} ${prefix}gemuk < ReplyAudio/Vn >
 ${garis + kotak} ${prefix}robot < ReplyAudio/Vn >
+${bawah}
+
+${atas}
+${bates} *MAKER MENU* 🖼️
+${garis + kotak} ${prefix}coolgrafiti < txt1|txt2 > 
+${garis + kotak} ${prefix}horror < txt1|txt2 >
+${garis + kotak} ${prefix}glitch < txt1|txt2 >
+${garis + kotak} ${prefix}wallgrafiti < txt1|txt2 >
+${garis + kotak} ${prefix}thunder < txt >
+${garis + kotak} ${prefix}transformer < txt >
+${garis + kotak} ${prefix}halloween < txt >
+${garis + kotak} ${prefix}graffiti < txt >
+${garis + kotak} ${prefix}harrypotter < txt >
+${garis + kotak} ${prefix}break-wall < txt >
+${garis + kotak} ${prefix}sketch < txt >
 ${bawah}
 
 ${atas}
@@ -2016,6 +2032,75 @@ case 'bass':
 					}
 					break  
 					
+
+//═════════════════════════ [ MAKER MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ YERIKO API ] ═════════════════════════					
+
+case 'glitch':
+if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
+reply(mess.wait)
+var gl = body.slice(8)
+var it = gl.split("|")[0]
+var ch = gl.split("|")[1]
+maker1 = await getBuffer(`https://ziy.herokuapp.com/api/glitch?text1=${it}&text2=${ch}&apikey=xZiyy`)
+dha.sendMessage(from, maker1, image, {quoted: mek, caption: 'Done'})
+break
+case 'horror':
+if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
+reply(mess.wait)
+var ho = body.slice(8)
+var rr = ho.split("|")[0]
+var or = ho.split("|")[1]
+maker3 = await getBuffer(`https://ziy.herokuapp.com/api/horror?text1=${rr}&text2=${or}&apikey=xZiyy`)
+dha.sendMessage(from, maker3, image, {quoted: mek, caption: 'Done'})
+break
+case 'coolgrafiti':
+if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
+reply(mess.wait)
+var gr = body.slice(13)
+var af = gr.split("|")[0]
+var iit = gr.split("|")[1]
+maker4 = await getBuffer(`https://ziy.herokuapp.com/api/cool-graffiti?text1=${af}&text2=${iit}&apikey=xZiyy`)
+dha.sendMessage(from, maker4, image, {quoted: mek, caption: 'Done'})
+break
+case 'wallgrafiti':
+if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
+reply(mess.wait)
+var wr = body.slice(13)
+var wf = wr.split("|")[0]
+var iwt = wr.split("|")[1]
+maker5 = await getBuffer(`https://ziy.herokuapp.com/api/cool-wall-graffiti?text1=${wf}&text2=${iwt}&apikey=xZiyy`)
+dha.sendMessage(from, maker5, image, {quoted: mek, caption: 'Done'})
+break
+case 'transformer':
+if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} Txt`)
+reply(mess.wait)
+txt1 = body.slice(13)
+maker6 = await getBuffer(`https://ziy.herokuapp.com/api/transformer?text=${txt1}&apikey=xZiyy`)
+dha.sendMessage(from, maker6, image, {quoted: mek})
+break
+case 'thunder':
+if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} Txt`)
+reply(mess.wait)
+txt2 = body.slice(9)
+maker7 = await getBuffer(`https://ziy.herokuapp.com/api/thunder?text=${txt2}&apikey=xZiyy`)
+dha.sendMessage(from, maker7, image, {quoted: mek})
+break
+case 'halloween':
+if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} Txt`)
+reply(mess.wait)
+txt3 = body.slice(11)
+maker8 = await getBuffer(`https://ziy.herokuapp.com/api/Halloweenfire?text=${txt3}&apikey=xZiyy`)
+dha.sendMessage(from, maker8, image, {quoted: mek})
+break
+case 'break-wall': case 'graffiti': case 'sketch': case 'harrypotter':
+if (!q) return reply(`No Text Example Request :\n${prefix + command} txt`)
+reply(mess.wait)
+maker9 = await getBuffer(`https://ziy.herokuapp.com/api/${command}?text=${q}&apikey=xZiyy`)
+dha.sendMessage(from, maker9, image, {quoted: mek})
+break
+					
 //═════════════════════════ [ OTHER MENU ] ═════════════════════════
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
 //═════════════════════════ [ NO API ] ═════════════════════════
@@ -2607,11 +2692,6 @@ menunya = `Ngetes Uyy`
 anu = dha.prepareMessageFromContent(from,{"productMessage": {"product": {"productImage": {"url": "https://mmg.whatsapp.net/d/f/Au9n7y-3XR4R0WUNdcQNNM2_mMcYLdVQQP9NkcG2sI-D.enc","mimetype": "image/jpeg","fileSha256": "ebKk5FKDC/fSbQKa4bmQ+EHbDZ/rqi78a+eYm4Z3TfQ=","fileLength": "20040","height": 390,"width": 390,"mediaKey": "+k8is4MAgrumDtQJQYfXtfN/haBmhmr4j4OKpM0Vl04=","fileEncSha256": "yu+xoTWjIR6UHVqdGNPINUyn6s50B+wDeZorjX1DP14=","jpegThumbnail": fs.readFileSync("./media/price.jpg")},"productId": "9999999","title": `${nama}`, "description": `${menunya}`,"productImageCount": 1},"businessOwnerJid": `${ownerJid}`,"contextInfo": {"forwardingScore": 9999,"isForwarded": true}}},{quoted: mek, contextInfo: { mentionedJid: [stod]}})
 dha.relayWAMessage(anu)
 break
-//case 'tespptx':
-//utod = "6282132242606@s.whatsapp.net"
-//pptxtes = 'PPTX'
-//Sendbutdocument(from, pptxtes, `PPTX TES`, fs.readFileSync('./media/pptxtes.pptx'), {mimetype:Mimetype.pptx, thumbnail:fs.readFileSync('./media/thumbnaildokumen.jpg'), filename:`${FakePdf}`, pageCount: 9999999 }, [{buttonId:`!doni`,buttonText:{displayText:'NOOB'},type:1},{buttonId:`!HH`,buttonText:{displayText:'GOBLOK'},type:1},{buttonId:`!scrt`,buttonText:{displayText:'NOOOOOOOB LOOO'},type:1}], {quoted:floc3, contextInfo: { mentionedJid: [utod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${FakeYt}`,mediaType:"2",thumbnail:dfrply,mediaUrl:`https://youtu.be/x-0WHkv3uc`}}})
-//break
 
 
 default:
