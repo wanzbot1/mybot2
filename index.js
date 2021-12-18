@@ -57,6 +57,7 @@ const fs = require("fs-extra")
 const util = require('util')
 const got = require("got");
 const xa = require("xfarr-api")
+const hx = require('hxz-api')
 const qrcodes = require('qrcode');
 const imgbb = require('imgbb-uploader');
 const os = require('os');
@@ -140,7 +141,7 @@ NomorGopay = set.NomorGopay
 NomorDana = set.NomorDana
 NomorOvo = set.NomorOvo
 NomorPulsa = set.NomorPulsa
-apidapa = '8ozc6QOHni'
+apidapa = set.apidapa
 // Symbol
 atas = tes.Atas
 bawah = tes.Bawah
@@ -1099,6 +1100,21 @@ ${atas}
 ${bates} *DOWNLOAD MENU* 📥
 ${garis + kotak} ${prefix}ytmp3 < Link >
 ${garis + kotak} ${prefix}ytmp4 < Link >
+${garis + kotak} ${prefix}tiktok < link >
+${garis + kotak} ${prefix}ttnowm < link >
+${garis + kotak} ${prefix}ttwm < link >
+${bawah}
+
+${atas}
+${bates} *SEARCHING MENU* 🔎
+${garis + kotak} ${prefix}pinterest < Query >
+${garis + kotak} ${prefix}googlesearch < query >
+${garis + kotak} ${prefix}playstore < nama apk >
+${garis + kotak} ${prefix}linkwa < nama gc >
+${garis + kotak} ${prefix}lirik < judul lagu >
+${garis + kotak} ${prefix}wikipedia < query >
+${garis + kotak} ${prefix}kbbi < query >
+${garis + kotak} ${prefix}kodepos < nama kota >
 ${bawah}
 
 ${atas}
@@ -1108,6 +1124,7 @@ ${garis + kotak} ${prefix}tourl < Reply Foto >
 ${garis + kotak} ${prefix}tovideo < ReplyStikerGif >
 ${garis + kotak} ${prefix}toimg < ReplyStiker >
 ${garis + kotak} ${prefix}tomp3 < ReplyVideo >
+${garis + kotak} ${prefix}emoji2png < Emoji >
 ${bawah}
 
 ${atas}
@@ -1347,35 +1364,117 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             sendFileFromUrl(res[0].link, video, {quoted: mek, mimetype: 'video/mp4', filename: res[0].output})
 })
             break
-/*case 'play':
-if (args.length === 0) return reply('Judul Nya?')
+case 'tiktok':
+if (!q) return reply('Link Tiktok Nya Mana:v')
 reply(mess.wait)
-fitur00 = body.slice(6)
-searchyt = fs.readFileSync('./media/searchyt.jpg')
-sendButLocation(from, `Silahkan Pilih Type Yang Ingin Anda Download`, "Pilih 1 Ya Ajc", {jpegThumbnail:searchyt,name:""}, [{buttonId:`#playmp4 ${fitur00}`,buttonText:{displayText:'🎥 VIDEO'},type:1},{buttonId:`#playmp3 ${fitur00}`,buttonText:{displayText:'🎵 MUSIK'},type:1}])
+tthb = fs.readFileSync('./media/tiktok.jpg')
+tiktok0 = `SILAHKAN PILIH TYPE NYA NO WM/WM`
+//tiktok1 = await fetchJson(`https://api.dapuhy.ga/api/socialmedia/tiktokder?url=${q}&apikey=${apidapa}`)
+sendButLocation(from, tiktok0, "Pilih Type Di Bawah Ini", {jpegThumbnail:tthb,name:""}, [{buttonId:`#ttnowm ${q}`,buttonText:{displayText:'NO WM'},type:1},{buttonId:`#ttwm ${q}`,buttonText:{displayText:'WM'},type:1}])
 break
-case 'playmp4':
-if (args.length === 0) return reply('Judul Nya?')
+case 'ttnowm': 
+if (!q) return
 reply(mess.wait)
-fitur1 = body.slice(9)
-fitur2 = await fetchJson(`https://x-restapi.herokuapp.com/api/play?q=${fitur1}&apikey=BETA`)
-fiturthb = await getBuffer(fitur2.image)
-fiturvd = await getBuffer(fitur2.mp4)
-fitur4 =`🔖 *Data Video* 🔖\n*Judul* : ${fitur2.title}\n*Upload* : ${fitur2.upload}\n*Views* : ${fitur2.views}`
-sendFileFromUrl(fiturthb, image, {caption: fitur4, quoted: mek}).then((lalu) => {
-sendFileFromUrl(fiturvd, video, {quoted: mek, mimetype: 'video/mp4', filename: fitur2.title})})
+tiktok1 = await fetchJson(`https://api.dapuhy.ga/api/socialmedia/tiktokder?url=${q}&apikey=${apidapa}`)
+tiktok4 = await getBuffer(tiktok1.result.nowm)
+dha.sendMessage(from, tiktok4, video, {quoted: mek, caption:'Done\nMasih Ada Wm?Emng Awokaowk Rada Error :V'})
 break
-case 'playmp3':
-if (args.length === 0) return reply('Judul Nya?')
+case 'ttwm':
+if (!q) return
 reply(mess.wait)
-fitur5 = body.slice(6)
-fitur6 = await fetchJson(`https://x-restapi.herokuapp.com/api/play?q=${fitur5}&apikey=BETA`)
-fiturthb1 = await getBuffer(fitur2.image)
-fiturvd1 = await getBuffer(fitur2.mp4)
-fitur7 =`🔖 *Data Audio* 🔖\n*Judul* : ${fitur6.title}\n*Upload* : ${fitur6.upload}\n*Views* : ${fitur6.views}`
-sendFileFromUrl(fiturthb1, image, {caption: fitur7, quoted: mek}).then((lalu) => {
-sendFileFromUrl(fiturvd1, video, {quoted: mek, mimetype: 'video/mp4', filename: fitur6.title})})
-break*/
+tiktok3 = await fetchJson(`https://api.dapuhy.ga/api/socialmedia/tiktokder?url=${q}&apikey=${apidapa}`)
+tiktok5 = await getBuffer(tiktok3.result.wm)
+dha.sendMessage(from, tiktok5, video, {quoted: mek, caption:'Done'})
+break
+break
+
+//═════════════════════════ [ SEARCH MENU ] ═════════════════════════
+//═════════════════════════ [ COPAS AJA ] ═════════════════════════
+//═════════════════════════ [ API RANDOM ] ═════════════════════════
+
+case 'googles':
+case 'googlesearch':
+case 'ggs':
+if (!q) return reply('Mau Cari Paan?')
+get_result = await fetchJson(`https://ziy.herokuapp.com/api/google?query=${q}`)
+ini_txt = "*SEARCHING GOOGLE* :\n"
+get_result = get_result.result
+for (var x of get_result) {
+ini_txt = `🔖 Judul : ${x.title}\n`
+ini_txt += `🔖 Link : ${x.link}\n`
+ini_txt += `🔖 Snippet : ${x.snippet}`
+}
+reply(ini_txt)
+break
+case 'playstore':
+if(!q) return reply('lu nyari apa?')
+let play = await hx.playstore(q)
+let store = '❉─────────────────────❉\n'
+for (let i of play){
+store += `\n[ *PLAY STORE* ]\n
+- *Nama* : ${i.name}
+- *Link* : ${i.link}\n
+- *Dev* : ${i.developer}
+- *Link Dev* : ${i.link_dev}\n❉─────────────────────❉`
+}
+reply(store)
+break
+case 'linkwa':
+case 'grupwa':
+case 'groupwa':
+case 'gcwa':
+            if(!q) return reply('cari group apa?')
+            hx.linkwa(q)
+            .then(result => {
+            let res = '「 *GC WA* 」\n\n'
+            for (let i of result) {
+            res += `*Nama*: *${i.nama}\n*Link*: ${i.link}\n\n`
+            }
+            reply(res)
+            });
+            break 
+case 'lirik':
+            if(!q) return reply('lagu apa?')
+            reply(mess.wait)
+            let song = await hx.lirik(q)
+            sendMediaURL(from,song.thumb,song.lirik)
+            break
+case 'pinterest':
+if (!q) return
+reply(mess.wait)
+foto = await fetchJson(`https://rest2yeriko.herokuapp.com/api/pinterest/?text=${q}&apikey=Yuzzu`)
+fotoget = await getBuffer(foto.result)
+dha.sendMessage(from, fotoget, image, {quoted: mek})
+break
+case 'wiki': case 'wikipedia':
+if (!q) return
+reply(mess.wait)
+ilmu = await fetchJson(`https://rest2yeriko.herokuapp.com/api/wikipedia?search=${q}&apikey=Yuzzu`)
+ilmu2 = `*Nama* : ${q}\n*Hasil* : ${ilmu.result.result}`
+reply(ilmu2)
+break
+case 'kbbi':
+if (!q) return
+reply(mess.wait)
+ilmu3 = await fetchJson(`https://rest2yeriko.herokuapp.com/api/kbbi?kata=${q}&apikey=Yuzzu`)
+ilmu4 =`*Nama* : ${q}\n*Hasil* : ${ilmu3.result.arti}`
+reply(ilmu4)
+break
+case 'kodepos': case 'codepos':
+if (!q) return
+reply(mess.wait)
+ilmu5 = await fetchJson(`https://rest2yeriko.herokuapp.com/api/kodepos?kota=${q}&apikey=Yuzzu`)
+ilmu6 = 'KODE POS\n'             
+for (let nyz of ilmu5.result.data) {
+ilmu6 += `${buletan} *PROVINCE* : ${nyz.province}\n`
+ilmu6 += `${buletan} *CITY* : ${nyz.city}\n`
+ilmu6 += `${buletan} *SUBDISTRICT* : ${nyz.subdistrict}\n`
+ilmu6 += `${buletan} *URBAN* : ${nyz.urban}\n`
+ilmu6 += `${buletan} *POSTALCODE* : ${nyz.postalcode}\n\n`            
+}
+reply(ilmu6)
+break
+
 
 //═════════════════════════ [ ADMIN MENU ] ═════════════════════════
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
@@ -1888,6 +1987,17 @@ case 'bass':
 						fs.unlinkSync(ran)
 					})
 					break
+case 'emoji2png':
+reply(mess.wait)
+emoji = args[0]
+try {
+emoji = encodeURI(emoji[0])
+} catch {
+emoji = encodeURI(emoji)
+}
+bufferg = await getBuffer(`https://api.dapuhy.ga/api/maker/emojitopng?emoji=${emoji}&apikey=${apidapa}`)
+dha.sendMessage(from, bufferg, image, {quoted: mek})
+break
 				case 'stiker': 
 				case 'sticker':
 				case 's':
@@ -2035,7 +2145,7 @@ case 'bass':
 
 //═════════════════════════ [ MAKER MENU ] ═════════════════════════
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
-//═════════════════════════ [ YERIKO API ] ═════════════════════════					
+//═════════════════════════ [ xZiyy API ] ═════════════════════════					
 
 case 'glitch':
 if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
@@ -2692,8 +2802,6 @@ menunya = `Ngetes Uyy`
 anu = dha.prepareMessageFromContent(from,{"productMessage": {"product": {"productImage": {"url": "https://mmg.whatsapp.net/d/f/Au9n7y-3XR4R0WUNdcQNNM2_mMcYLdVQQP9NkcG2sI-D.enc","mimetype": "image/jpeg","fileSha256": "ebKk5FKDC/fSbQKa4bmQ+EHbDZ/rqi78a+eYm4Z3TfQ=","fileLength": "20040","height": 390,"width": 390,"mediaKey": "+k8is4MAgrumDtQJQYfXtfN/haBmhmr4j4OKpM0Vl04=","fileEncSha256": "yu+xoTWjIR6UHVqdGNPINUyn6s50B+wDeZorjX1DP14=","jpegThumbnail": fs.readFileSync("./media/price.jpg")},"productId": "9999999","title": `${nama}`, "description": `${menunya}`,"productImageCount": 1},"businessOwnerJid": `${ownerJid}`,"contextInfo": {"forwardingScore": 9999,"isForwarded": true}}},{quoted: mek, contextInfo: { mentionedJid: [stod]}})
 dha.relayWAMessage(anu)
 break
-
-
 default:
 if (fs.existsSync(`./media/${from}.json`)) {
 	gelutSkuy = setGelud(`${from}`)
