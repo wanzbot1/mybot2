@@ -748,7 +748,7 @@ headerType: 1
 }
 dha.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
 }
-///Button Image
+///Button Images
 const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
 kma = gam1
 mhan = await dha.prepareMessage(from, kma, image)
@@ -1287,6 +1287,8 @@ ${bawah}
 
 ${atas}
 ${bates} *STICKER MENU* 📌
+${garis + kotak} ${prefix}pmeme < reply foto text1|text2 >
+${garis + kotak} ${prefix}smeme < reply stiker text1|text2 >
 ${garis + kotak} ${prefix}sticker < ReplyFoto >
 ${garis + kotak} ${prefix}sgif < ReplyVideo >
 ${bawah}
@@ -1305,7 +1307,273 @@ ${bawah}
 ║▌│█║▌│ █║▌│█│║▌║
 ║▌│█║▌│ █║▌│█│║▌║
 
-    © *${NamaOwner}*`, fs.readFileSync('./media/Loli Hot.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/thumbnaildokumen.jpg'), filename:`${FakePdf}`, pageCount: 9999999 }, [{buttonId:`!donasi`,buttonText:{displayText:'Bansos'},type:1},{buttonId:`!grubbot`,buttonText:{displayText:'Grub Bot'},type:1},{buttonId:`!script`,buttonText:{displayText:'Script'},type:1}], {quoted:floc3, contextInfo: { mentionedJid: [utod,stod,ptod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${FakeYt}`,mediaType:"2",thumbnail:fs.readFileSync('./media/yt.jpg'),mediaUrl:`https://youtu.be/x-0WHkv3uc`}}})
+    © *${NamaOwner}*`, fs.readFileSync('./media/Loli Hot.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./media/pdf.jpg'), filename:`${FakePdf}`, pageCount: 9999999 }, [{buttonId:`!simpelmenu`,buttonText:{displayText:'Simple Menu\n\n\n\nKalo G Muncul Ketik #simplemenu'},type:1},{buttonId:`!donasi`,buttonText:{displayText:'Upgrade'},type:1},{buttonId:`!script`,buttonText:{displayText:'Script'},type:1}], {quoted:floc3, contextInfo: { mentionedJid: [utod,stod,ptod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${FakeYt}`,mediaType:"2",thumbnail:fs.readFileSync('./media/yt.jpg'),mediaUrl:`https://youtu.be/x-0WHkv3uc`}}})
+            break
+      case 'menucatalog':
+      case 'simpelmenu': case 'simplemenu':
+      gambar = fs.readFileSync('./media/catalog.jpg')
+tamnel = fs.readFileSync('./media/catalog.jpg')
+            menunya = `${atas}
+${bates} *ADMIN MENU* 🤴
+${garis + kotak} ${prefix}welcome < enable/disable >
+${garis + kotak} ${prefix}antilink < on/off >
+${garis + kotak} ${prefix}kickall
+${garis + kotak} ${prefix}promote
+${garis + kotak} ${prefix}demote
+${garis + kotak} ${prefix}listonline
+${garis + kotak} ${prefix}tagall *teks*
+${garis + kotak} ${prefix}leave
+${garis + kotak} ${prefix}kick *reply*
+${garis + kotak} ${prefix}add *+62xxxxxx*
+${garis + kotak} ${prefix}setnamegc
+${garis + kotak} ${prefix}setppgc
+${garis + kotak} ${prefix}setdeskgc
+${garis + kotak} ${prefix}sider *reply chat bot*
+${garis + kotak} ${prefix}hidetag *teks/reply teks*
+${garis + kotak} ${prefix}linkgc
+${bawah}
+
+${atas}
+${bates} *OWNER MENU* 👑
+${garis + kotak} ${prefix}autoread
+${garis + kotak} ${prefix}auto vn/ketik on/off
+${garis + kotak} ${prefix}bcnowm
+${garis + kotak} ${prefix}bc
+${garis + kotak} ${prefix}bc2
+${garis + kotak} ${prefix}bcgc
+${garis + kotak} ${prefix}bcgc2
+${garis + kotak} ${prefix}clearall
+${bawah}
+
+${atas}
+${bates} *DOWNLOAD MENU* 📥
+${garis + kotak} ${prefix}ytmp3 < Link >
+${garis + kotak} ${prefix}ytmp4 < Link >
+${garis + kotak} ${prefix}tiktok < link >
+${garis + kotak} ${prefix}ttnowm < link >
+${garis + kotak} ${prefix}ttwm < link >
+${bawah}
+
+${atas}
+${bates} *SEARCHING MENU* 🔎
+${garis + kotak} ${prefix}pinterest < Query >
+${garis + kotak} ${prefix}googlesearch < query >
+${garis + kotak} ${prefix}playstore < nama apk >
+${garis + kotak} ${prefix}linkwa < nama gc >
+${garis + kotak} ${prefix}lirik < judul lagu >
+${garis + kotak} ${prefix}wikipedia < query >
+${garis + kotak} ${prefix}kbbi < query >
+${garis + kotak} ${prefix}kodepos < nama kota >
+${bawah}
+
+${atas}
+${bates} *TO MENU* 🔘
+${garis + kotak} ${prefix}img2url < Reply Foto >
+${garis + kotak} ${prefix}tourl < Reply Foto >
+${garis + kotak} ${prefix}tovideo < ReplyStikerGif >
+${garis + kotak} ${prefix}toimg < ReplyStiker >
+${garis + kotak} ${prefix}tomp3 < ReplyVideo >
+${garis + kotak} ${prefix}emoji2png < Emoji >
+${bawah}
+
+${atas}
+${bates} *MUSIC EDIT* 🎶
+${garis + kotak} ${prefix}bass < ReplyAudio/Vn >
+${garis + kotak} ${prefix}balik < ReplyAudio/Vn >
+${garis + kotak} ${prefix}gemuk < ReplyAudio/Vn >
+${garis + kotak} ${prefix}robot < ReplyAudio/Vn >
+${bawah}
+
+${atas}
+${bates} *MAKER MENU* 🖼️
+${garis + kotak} ${prefix}coolgrafiti < txt1|txt2 > 
+${garis + kotak} ${prefix}horror < txt1|txt2 >
+${garis + kotak} ${prefix}glitch < txt1|txt2 >
+${garis + kotak} ${prefix}wallgrafiti < txt1|txt2 >
+${garis + kotak} ${prefix}thunder < txt >
+${garis + kotak} ${prefix}transformer < txt >
+${garis + kotak} ${prefix}halloween < txt >
+${garis + kotak} ${prefix}graffiti < txt >
+${garis + kotak} ${prefix}harrypotter < txt >
+${garis + kotak} ${prefix}break-wall < txt >
+${garis + kotak} ${prefix}sketch < txt >
+${bawah}
+
+${atas}
+${bates} *GAME MENU* 🎮
+${garis + kotak} ${prefix}tictactoe @tag lawan
+${garis + kotak} ${prefix}gelud @tag lawan
+${garis + kotak} ${prefix}delsesittt
+${garis + kotak} ${prefix}delsesigelud
+${bawah}
+
+${atas}
+${bates} *RANDOM TAG MENU* 🎰
+${garis + kotak} ${prefix}ganteng
+${garis + kotak} ${prefix}cantik
+${garis + kotak} ${prefix}jelek
+${garis + kotak} ${prefix}goblok
+${garis + kotak} ${prefix}bego
+${garis + kotak} ${prefix}pinter
+${garis + kotak} ${prefix}jago
+${garis + kotak} ${prefix}babi
+${garis + kotak} ${prefix}beban
+${garis + kotak} ${prefix}baik
+${garis + kotak} ${prefix}jahat
+${garis + kotak} ${prefix}anjing
+${garis + kotak} ${prefix}monyet
+${garis + kotak} ${prefix}haram
+${garis + kotak} ${prefix}kontol
+${garis + kotak} ${prefix}pakboy
+${garis + kotak} ${prefix}pakgirl
+${garis + kotak} ${prefix}sadboy
+${garis + kotak} ${prefix}sadgirl
+${garis + kotak} ${prefix}wibu
+${garis + kotak} ${prefix}nolep
+${garis + kotak} ${prefix}hebat
+${bawah}
+
+${atas}
+${bates} *V MENU* 👥
+${garis + kotak} ${prefix}vsadboy
+${garis + kotak} ${prefix}vpakboy
+${garis + kotak} ${prefix}vbaik
+${garis + kotak} ${prefix}vjago
+${garis + kotak} ${prefix}vjelek
+${garis + kotak} ${prefix}vcantik
+${garis + kotak} ${prefix}vpinter
+${garis + kotak} ${prefix}vbeban
+${garis + kotak} ${prefix}vkontol
+${garis + kotak} ${prefix}vhebat
+${garis + kotak} ${prefix}vwibu
+${garis + kotak} ${prefix}vharam
+${garis + kotak} ${prefix}vbabi
+${garis + kotak} ${prefix}vbego
+${garis + kotak} ${prefix}vganteng
+${garis + kotak} ${prefix}vanjing
+${garis + kotak} ${prefix}vmonyet
+${garis + kotak} ${prefix}vsadgirl
+${garis + kotak} ${prefix}vpakgirl
+${garis + kotak} ${prefix}vjahat
+${garis + kotak} ${prefix}vnolep
+${garis + kotak} ${prefix}vgoblok
+${bawah}
+
+${atas}
+${bates} *X MENU* 👥
+${garis + kotak} ${prefix}xsadboy <@tag>
+${garis + kotak} ${prefix}xpakboy <@tag>
+${garis + kotak} ${prefix}xbaik <@tag>
+${garis + kotak} ${prefix}xjago <@tag>
+${garis + kotak} ${prefix}xjelek <@tag>
+${garis + kotak} ${prefix}xcantik <@tag>
+${garis + kotak} ${prefix}xpinter <@tag>
+${garis + kotak} ${prefix}xbeban <@tag>
+${garis + kotak} ${prefix}xkontol <@tag>
+${garis + kotak} ${prefix}xhebat <@tag>
+${garis + kotak} ${prefix}xwibu <@tag>
+${garis + kotak} ${prefix}xharam <@tag>
+${garis + kotak} ${prefix}xbabi <@tag>
+${garis + kotak} ${prefix}xbego <@tag>
+${garis + kotak} ${prefix}xganteng <@tag>
+${garis + kotak} ${prefix}xanjing <@tag>
+${garis + kotak} ${prefix}xmonyet <@tag>
+${garis + kotak} ${prefix}xsadgirl <@tag>
+${garis + kotak} ${prefix}xpakgirl <@tag>
+${garis + kotak} ${prefix}xjahat <@tag>
+${garis + kotak} ${prefix}xnolep <@tag>
+${garis + kotak} ${prefix}xgoblok <@tag>
+${bawah}
+
+${atas}
+${bates} *Z MENU* 👥
+${garis + kotak} ${prefix}zsadboy
+${garis + kotak} ${prefix}zpakboy
+${garis + kotak} ${prefix}zbaik
+${garis + kotak} ${prefix}zjago
+${garis + kotak} ${prefix}zjelek
+${garis + kotak} ${prefix}zcantik
+${garis + kotak} ${prefix}zpinter
+${garis + kotak} ${prefix}zbeban
+${garis + kotak} ${prefix}zkontol
+${garis + kotak} ${prefix}zhebat
+${garis + kotak} ${prefix}zwibu
+${garis + kotak} ${prefix}zharam
+${garis + kotak} ${prefix}zbabi
+${garis + kotak} ${prefix}zbego
+${garis + kotak} ${prefix}zganteng
+${garis + kotak} ${prefix}zanjing
+${garis + kotak} ${prefix}zmonyet
+${garis + kotak} ${prefix}zsadgirl
+${garis + kotak} ${prefix}zpakgirl
+${garis + kotak} ${prefix}zjahat
+${garis + kotak} ${prefix}znolep
+${garis + kotak} ${prefix}zgoblok
+${bawah}
+
+${atas}
+${bates} *CEK MENU* ✔️
+${garis + kotak} ${prefix}gantengcek
+${garis + kotak} ${prefix}cantikcek
+${garis + kotak} ${prefix}jelekcek
+${garis + kotak} ${prefix}goblokcek
+${garis + kotak} ${prefix}begocek
+${garis + kotak} ${prefix}pintercek
+${garis + kotak} ${prefix}jagocek
+${garis + kotak} ${prefix}nolepcek
+${garis + kotak} ${prefix}babicek
+${garis + kotak} ${prefix}bebancek
+${garis + kotak} ${prefix}baikcek
+${garis + kotak} ${prefix}jahatcek
+${garis + kotak} ${prefix}anjingcek
+${garis + kotak} ${prefix}haramcek
+${garis + kotak} ${prefix}kontolcek
+${garis + kotak} ${prefix}pakboycek
+${garis + kotak} ${prefix}pakgirlcek
+${garis + kotak} ${prefix}sangecek
+${garis + kotak} ${prefix}bapercek
+${bawah}
+
+${atas}
+${bates} *STICKER MENU* 📌
+${garis + kotak} ${prefix}pmeme < reply foto text1|text2 >
+${garis + kotak} ${prefix}smeme < reply stiker text1|text2 >
+${garis + kotak} ${prefix}sticker < ReplyFoto >
+${garis + kotak} ${prefix}sgif < ReplyVideo >
+${bawah}
+
+${atas}
+${bates} *OTHER MENU* 🔓
+${garis + kotak} ${prefix}donasi
+${garis + kotak} ${prefix}script
+${garis + kotak} ${prefix}runtime
+${garis + kotak} ${prefix}speed
+${garis + kotak} ${prefix}afk < alasan >
+${garis + kotak} ${prefix}rules
+${garis + kotak} ${prefix}snk
+${bawah}`
+            var imgs = await dha.prepareMessage('0@c.us', gambar, image, { thumbnail: tamnel })
+            var imgCatalog = imgs.message.imageMessage
+            var ctlg = await dha.prepareMessageFromContent(from, {
+            "productMessage": {
+            "product": {
+            "productImage": imgCatalog,
+            "productId": "4457725420906655",
+            "title": `SIMPLE MENU BOT`,
+            "description": menunya,
+            "footerText": `メNATABOT`,
+            "currencyCode": "USD",
+            "priceAmount1000": "0",
+            "productImageCount": 1,
+            "firstImageId": 1,
+            "salePriceAmount1000": "0",
+            "retailerId": `© By ${NamaOwner}`,
+            "url": `https://wa.me/${NomorOwnz}`
+            },
+            "businessOwnerJid": `${NomorOwnz}@s.whatsapp.net`,
+            }
+            }, { quoted: floc3, mimetype: 'image/jpeg' })
+            dha.relayWAMessage(ctlg)
             break
 
 
@@ -1384,7 +1652,6 @@ reply(mess.wait)
 tiktok3 = await fetchJson(`https://rest2yeriko.herokuapp.com/api/tiktok/?url=${q}&apikey=Yuzzu`)
 tiktok5 = await getBuffer(tiktok3.result.watermark)
 dha.sendMessage(from, tiktok5, video, {quoted: mek, caption:'Done'})
-break
 break
 
 //═════════════════════════ [ SEARCH MENU ] ═════════════════════════
@@ -1997,6 +2264,45 @@ emoji = encodeURI(emoji)
 bufferg = await getBuffer(`https://api.dapuhy.ga/api/maker/emojitopng?emoji=${emoji}&apikey=${apidapa}`)
 dha.sendMessage(from, bufferg, image, {quoted: mek})
 break
+    case 'potomeme': case 'pmeme':
+           if (args.length < 1) return reply(`Kirim perintah *${prefix + command}* teks atas|teks bawah`)
+           if (!q.includes('|')) return reply(`Kirim perintah *${prefix + command}* teks atas|teks bawah`)
+           try {
+           if (!isQuotedImage && !isQuotedSticker) return reply(`REPLY GAMBAR ATAU STICKER!!`)
+           reply(mess.wait)
+           var teks1 = q.split('|')[0] ? q.split('|')[0] : ''
+           var teks2 = q.split('|')[1] ? q.split('|')[1] : ''
+           var imgbb = require('imgbb-uploader')
+           var enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+           var media = await dha.downloadAndSaveMediaMessage(enmedia)
+           var njay = await imgbb('520bd6f6209077d1777c2a4f20c509c2', media)
+           var resu = await getBuffer(`https://api.memegen.link/images/custom/${teks1}/${teks2}.png?background=${njay.display_url}`)
+           dha.sendMessage(from, resu, image, {quoted: mek})
+           fs.unlinkSync(media)
+           } catch (e) {
+           return reply(`${e}`)
+           console.log(e)
+           }
+           break    
+     case 'smeme': case 'stickmeme': case 'sm': {
+           var top = q.split('|')[0] ? q.split('|')[0] : ''
+           var bottom = q.split('|')[1] ? q.split('|')[1] : ''
+           reply(mess.wait)
+           var imgbb = require('imgbb-uploader')
+           if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length > 0) {
+           ger = isQuotedImage || isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+           owgi = await  dha.downloadAndSaveMediaMessage(ger)
+           anu = await imgbb("f0b190d67308d34811fab9c56fe8aba7", owgi)
+           tekks = `${anu.display_url}`
+           ranp = getRandom('.gif')
+           rano = getRandom('.webp')
+           anu1 = `https://api.memegen.link/images/custom/${top}/${bottom}.png?background=${tekks}`
+           sendWebp(from, `${anu1}`)
+           } else {
+           reply('Gunakan foto!')
+           } 
+           }
+           break
 				case 'stiker': 
 				case 'sticker':
 				case 's':
