@@ -1368,22 +1368,21 @@ case 'tiktok':
 if (!q) return reply('Link Tiktok Nya Mana:v')
 reply(mess.wait)
 tthb = fs.readFileSync('./media/tiktok.jpg')
-tiktok0 = `SILAHKAN PILIH TYPE NYA NO WM/WM`
-//tiktok1 = await fetchJson(`https://api.dapuhy.ga/api/socialmedia/tiktokder?url=${q}&apikey=${apidapa}`)
+tiktok0 = ``
 sendButLocation(from, tiktok0, "Pilih Type Di Bawah Ini", {jpegThumbnail:tthb,name:""}, [{buttonId:`#ttnowm ${q}`,buttonText:{displayText:'NO WM'},type:1},{buttonId:`#ttwm ${q}`,buttonText:{displayText:'WM'},type:1}])
 break
 case 'ttnowm': 
 if (!q) return
 reply(mess.wait)
-tiktok1 = await fetchJson(`https://api.dapuhy.ga/api/socialmedia/tiktokder?url=${q}&apikey=${apidapa}`)
-tiktok4 = await getBuffer(tiktok1.result.nowm)
-dha.sendMessage(from, tiktok4, video, {quoted: mek, caption:'Done\nMasih Ada Wm?Emng Awokaowk Rada Error :V'})
+tiktok1 = await fetchJson(`https://rest2yeriko.herokuapp.com/api/tiktok/?url=${q}&apikey=Yuzzu`)
+tiktok4 = await getBuffer(tiktok1.result.nowatermark)
+dha.sendMessage(from, tiktok4, video, {quoted: mek, caption:'Done'})
 break
 case 'ttwm':
 if (!q) return
 reply(mess.wait)
-tiktok3 = await fetchJson(`https://api.dapuhy.ga/api/socialmedia/tiktokder?url=${q}&apikey=${apidapa}`)
-tiktok5 = await getBuffer(tiktok3.result.wm)
+tiktok3 = await fetchJson(`https://rest2yeriko.herokuapp.com/api/tiktok/?url=${q}&apikey=Yuzzu`)
+tiktok5 = await getBuffer(tiktok3.result.watermark)
 dha.sendMessage(from, tiktok5, video, {quoted: mek, caption:'Done'})
 break
 break
