@@ -1108,7 +1108,6 @@ ${bawah}
 ${atas}
 ${bates} *SEARCHING MENU* 🔎
 ${garis + kotak} ${prefix}pinterest < Query >
-${garis + kotak} ${prefix}googlesearch < query >
 ${garis + kotak} ${prefix}playstore < nama apk >
 ${garis + kotak} ${prefix}linkwa < nama gc >
 ${garis + kotak} ${prefix}lirik < judul lagu >
@@ -1137,17 +1136,26 @@ ${bawah}
 
 ${atas}
 ${bates} *MAKER MENU* 🖼️
-${garis + kotak} ${prefix}coolgrafiti < txt1|txt2 > 
-${garis + kotak} ${prefix}horror < txt1|txt2 >
-${garis + kotak} ${prefix}glitch < txt1|txt2 >
-${garis + kotak} ${prefix}wallgrafiti < txt1|txt2 >
-${garis + kotak} ${prefix}thunder < txt >
-${garis + kotak} ${prefix}transformer < txt >
-${garis + kotak} ${prefix}halloween < txt >
-${garis + kotak} ${prefix}graffiti < txt >
-${garis + kotak} ${prefix}harrypotter < txt >
-${garis + kotak} ${prefix}break-wall < txt >
-${garis + kotak} ${prefix}sketch < txt >
+${garis + kotak} ${prefix}halloween <text>
+${garis + kotak} ${prefix}rainbow <text>
+${garis + kotak} ${prefix}scfi <text>
+${garis + kotak} ${prefix}blue <text>
+${garis + kotak} ${prefix}juice <text>
+${garis + kotak} ${prefix}purple <text>
+${garis + kotak} ${prefix}toxic <text>
+${garis + kotak} ${prefix}peridot <text>
+${garis + kotak} ${prefix}metal <text>
+${garis + kotak} ${prefix}realistic <text>
+${garis + kotak} ${prefix}impressive <text>
+${garis + kotak} ${prefix}cracked <text>
+${garis + kotak} ${prefix}magma <text>
+${garis + kotak} ${prefix}thunder <text>
+${garis + kotak} ${prefix}berry <text>
+${garis + kotak} ${prefix}transformer <text>
+${garis + kotak} ${prefix}horror <text>
+${garis + kotak} ${prefix}metallic <text>
+${garis + kotak} ${prefix}circuit <text>
+${garis + kotak} ${prefix}sketch <text>
 ${bawah}
 
 ${atas}
@@ -1658,20 +1666,7 @@ break
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
 //═════════════════════════ [ API RANDOM ] ═════════════════════════
 
-case 'googles':
-case 'googlesearch':
-case 'ggs':
-if (!q) return reply('Mau Cari Paan?')
-get_result = await fetchJson(`https://ziy.herokuapp.com/api/google?query=${q}`)
-ini_txt = "*SEARCHING GOOGLE* :\n"
-get_result = get_result.result
-for (var x of get_result) {
-ini_txt = `🔖 Judul : ${x.title}\n`
-ini_txt += `🔖 Link : ${x.link}\n`
-ini_txt += `🔖 Snippet : ${x.snippet}`
-}
-reply(ini_txt)
-break
+
 case 'playstore':
 if(!q) return reply('lu nyari apa?')
 let play = await hx.playstore(q)
@@ -2452,69 +2447,129 @@ break
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
 //═════════════════════════ [ xZiyy API ] ═════════════════════════					
 
-case 'glitch':
-if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
-reply(mess.wait)
-var gl = body.slice(8)
-var it = gl.split("|")[0]
-var ch = gl.split("|")[1]
-maker1 = await getBuffer(`https://ziy.herokuapp.com/api/glitch?text1=${it}&text2=${ch}&apikey=xZiyy`)
-dha.sendMessage(from, maker1, image, {quoted: mek, caption: 'Done'})
-break
-case 'horror':
-if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
-reply(mess.wait)
-var ho = body.slice(8)
-var rr = ho.split("|")[0]
-var or = ho.split("|")[1]
-maker3 = await getBuffer(`https://ziy.herokuapp.com/api/horror?text1=${rr}&text2=${or}&apikey=xZiyy`)
-dha.sendMessage(from, maker3, image, {quoted: mek, caption: 'Done'})
-break
-case 'coolgrafiti':
-if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
-reply(mess.wait)
-var gr = body.slice(13)
-var af = gr.split("|")[0]
-var iit = gr.split("|")[1]
-maker4 = await getBuffer(`https://ziy.herokuapp.com/api/cool-graffiti?text1=${af}&text2=${iit}&apikey=xZiyy`)
-dha.sendMessage(from, maker4, image, {quoted: mek, caption: 'Done'})
-break
-case 'wallgrafiti':
-if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} txt|txt`)
-reply(mess.wait)
-var wr = body.slice(13)
-var wf = wr.split("|")[0]
-var iwt = wr.split("|")[1]
-maker5 = await getBuffer(`https://ziy.herokuapp.com/api/cool-wall-graffiti?text1=${wf}&text2=${iwt}&apikey=xZiyy`)
-dha.sendMessage(from, maker5, image, {quoted: mek, caption: 'Done'})
-break
-case 'transformer':
-if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} Txt`)
-reply(mess.wait)
-txt1 = body.slice(13)
-maker6 = await getBuffer(`https://ziy.herokuapp.com/api/transformer?text=${txt1}&apikey=xZiyy`)
-dha.sendMessage(from, maker6, image, {quoted: mek})
-break
-case 'thunder':
-if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} Txt`)
-reply(mess.wait)
-txt2 = body.slice(9)
-maker7 = await getBuffer(`https://ziy.herokuapp.com/api/thunder?text=${txt2}&apikey=xZiyy`)
-dha.sendMessage(from, maker7, image, {quoted: mek})
-break
-case 'halloween':
-if (args.length === 0) return reply(`No Text Example Request :\n${prefix + command} Txt`)
-reply(mess.wait)
-txt3 = body.slice(11)
-maker8 = await getBuffer(`https://ziy.herokuapp.com/api/Halloweenfire?text=${txt3}&apikey=xZiyy`)
-dha.sendMessage(from, maker8, image, {quoted: mek})
-break
-case 'break-wall': case 'graffiti': case 'sketch': case 'harrypotter':
-if (!q) return reply(`No Text Example Request :\n${prefix + command} txt`)
-reply(mess.wait)
-maker9 = await getBuffer(`https://ziy.herokuapp.com/api/${command}?text=${q}&apikey=xZiyy`)
-dha.sendMessage(from, maker9, image, {quoted: mek})
-break
+		case 'rainbow': case 'scfi': case 'blue': case 'juice': case 'purple': case 'toxic': case 'peridot': case 'metal': 
+			case 'realistic': case 'impressive': case 'cracked': case 'magma': case 'thunder': case 'berry': case 'transformer': 
+			case 'horror': case 'metallic': case 'circuit': case 'sketch': case 'halloween': 
+			if (args.length < 1) return
+			reply(mess.wait)						
+			nyz5 = await fetchJson(`https://myselfff.herokuapp.com/docs/textpro/${command}?text=${aq}`) 
+			nyz4 = await getBuffer(nyz5.result)
+			dha.sendMessage(from, nyz4, image, {caption:`NIH KAK`,quoted:mek}) 					
+			break
+case 'nuliskiri':{
+		if (args.length < 1) return reply(`Kirim perintah *${prefix}nuliskiri* teks`)
+									reply(mess.wait)
+									const tulisan = q
+									const splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
+									const fixHeight = splitText.split('\n').slice(0, 31).join('\n')
+									spawn('convert', [
+									'./media/nulis/images/buku/sebelumkiri.jpg',
+									'-font',
+									'./media/nulis/font/Indie-Flower.ttf',
+									'-size',
+									'960x1280',
+									'-pointsize',
+									'22',
+									'-interline-spacing',
+									'2',
+									'-annotate',
+									'+140+153',
+									fixHeight,
+									'./media/nulis/images/buku/setelahkiri.jpg'
+									])
+									.on('error', () => reply('Error')
+									.on('exit', () => {
+										dha.sendMessage(from, fs.readFileSync('./media/nulis/images/buku/setelahkiri.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Jangan Malas`})
+								//		limitAdd(sender, limit)
+										})
+									}
+									break
+						case 'nuliskanan':{
+								//	if (isLimit(sender, isPremium, isCreator, isOwner, limitawal, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+									if (args.length < 1) return reply(`Kirim perintah *${prefix}nuliskanan* teks`)
+									reply(mess.wait)
+									const tulisan = q
+									const splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
+									const fixHeight = splitText.split('\n').slice(0, 31).join('\n')
+									spawn('convert', [
+									'./media/nulis/images/buku/sebelumkanan.jpg',
+									'-font',
+									'./media/nulis/font/Indie-Flower.ttf',
+									'-size',
+									'960x1280',
+									'-pointsize',
+									'23',
+									'-interline-spacing',
+									'2',
+									'-annotate',
+									'+128+129',
+									fixHeight,
+									'./media/nulis/images/buku/setelahkanan.jpg'
+									])
+									.on('error', () => reply('Error')
+									.on('exit', () => {
+										dha.sendMessage(from, fs.readFileSync('./media/nulis/images/buku/setelahkanan.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Jangan Malas`})
+								//		limitAdd(sender, limit)
+										})
+									}
+									break
+						case 'foliokiri':{
+									//if (isLimit(sender, isPremium, isCreator, isOwner, limitawal, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+									if (args.length < 1) return reply(`Kirim perintah *${prefix}foliokiri* teks`)
+									reply(mess.wait)
+									const tulisan = q
+									const splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
+									const fixHeight = splitText.split('\n').slice(0, 38).join('\n')
+									spawn('convert', [
+									'./media/nulis/images/folio/sebelumkiri.jpg',
+									'-font',
+									'./media/nulis/font/Indie-Flower.ttf',
+									'-size',
+									'1720x1280',
+									'-pointsize',
+									'23',
+									'-interline-spacing',
+									'4',
+									'-annotate',
+									'+48+185',
+									fixHeight,
+									'./media/nulis/images/folio/setelahkiri.jpg'
+									])
+									.on('error', () => reply('Error')
+									.on('exit', () => {
+										dha.sendMessage(from, fs.readFileSync('./media/nulis/images/folio/setelahkiri.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Jangan Malas`})
+							//			limitAdd(sender, limit)
+										})
+									}
+									break
+						case 'foliokanan':{
+									//if (isLimit(sender, isPremium, isCreator, isOwner, limitawal, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+									if (args.length < 1) return reply(`Kirim perintah *${prefix}foliokanan* teks`)
+									reply(mess.wait)
+									const tulisan = q
+									const splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
+									const fixHeight = splitText.split('\n').slice(0, 38).join('\n')
+									spawn('convert', [
+									'./media/nulis/images/folio/sebelumkanan.jpg',
+									'-font',
+									'./media/nulis/font/Indie-Flower.ttf',
+									'-size',
+									'960x1280',
+									'-pointsize',
+									'23',
+									'-interline-spacing',
+									'3',
+									'-annotate',
+									'+89+190',
+									fixHeight,
+									'./media/nulis/images/folio/setelahkanan.jpg'
+									])
+									.on('error', () => reply('Error')
+									.on('exit', () => {
+										dha.sendMessage(from, fs.readFileSync('./media/nulis/images/folio/setelahkanan.jpg'), image, {thumbnail:Buffer.alloc(0),quoted: mek, caption: `Jangan Malas`})
+									})
+									}
+									break 
 					
 //═════════════════════════ [ OTHER MENU ] ═════════════════════════
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
