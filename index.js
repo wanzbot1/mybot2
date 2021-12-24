@@ -2450,9 +2450,9 @@ break
 		case 'rainbow': case 'scfi': case 'blue': case 'juice': case 'purple': case 'toxic': case 'peridot': case 'metal': 
 			case 'realistic': case 'impressive': case 'cracked': case 'magma': case 'thunder': case 'berry': case 'transformer': 
 			case 'horror': case 'metallic': case 'circuit': case 'sketch': case 'halloween': 
-			if (args.length < 1) return
+			if (!q) return
 			reply(mess.wait)						
-			nyz5 = await fetchJson(`https://myselfff.herokuapp.com/docs/textpro/${command}?text=${aq}`) 
+			nyz5 = await fetchJson(`https://myselfff.herokuapp.com/docs/textpro/${command}?text=${q}`) 
 			nyz4 = await getBuffer(nyz5.result)
 			dha.sendMessage(from, nyz4, image, {caption:`NIH KAK`,quoted:mek}) 					
 			break
