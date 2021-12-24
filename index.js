@@ -2456,7 +2456,7 @@ break
 			nyz4 = await getBuffer(nyz5.result)
 			dha.sendMessage(from, nyz4, image, {caption:`NIH KAK`,quoted:mek}) 					
 			break
-case 'nuliskiri':{
+/*case 'nuliskiri':{
 		if (args.length < 1) return reply(`Kirim perintah *${prefix}nuliskiri* teks`)
 									reply(mess.wait)
 									const tulisan = q
@@ -2570,7 +2570,7 @@ case 'nuliskiri':{
 									})
 									}
 									break 
-					
+					*/
 //═════════════════════════ [ OTHER MENU ] ═════════════════════════
 //═════════════════════════ [ COPAS AJA ] ═════════════════════════
 //═════════════════════════ [ NO API ] ═════════════════════════
