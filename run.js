@@ -35,7 +35,7 @@ const starts = async (dha = new WAConnection()) => {
 	})
 
 	// Menghubungkan
-	fs.existsSync(`./sesi.json`) && dha.loadAuthInfo(`./sesi.json`)
+	fs.existsSync(`./session.json`) && dha.loadAuthInfo(`./session.json`)
 	dha.on('connecting', () => {
 		console.log(color('[ MESS ]', 'purple'), color('Connecting Process'));
 	})
@@ -46,7 +46,7 @@ const starts = async (dha = new WAConnection()) => {
 	// session
 	//dha.sendMessage(`${set.NomorOwner}`, `𝙃𝘼𝙄 𝙊𝙒𝙉𝙀𝙍 ${set.NamaOwner}!!\n𝘽𝙊𝙏 𝙎𝙐𝘿𝘼𝙃 𝙎𝙐𝘾𝘾𝙀𝙎 𝘾𝙊𝙉𝙉𝙀𝘾𝙏\n𝙅𝘼𝙉𝙂𝘼𝙉 𝙇𝙐𝙋𝘼 𝙎𝙐𝘽𝙎𝘾𝙍𝙄𝘽𝙀 𝙋𝙀𝙈𝘽𝙐𝘼𝙏 𝙎𝘾𝙍𝙄𝙋𝙏 𝙄𝙉𝙄\n\n\n𝘾𝙀𝙍𝘿𝙄𝙏\n𝙉𝙖𝙢𝙖 : 𝙔𝙚𝙧𝙞𝙠𝙤\n𝙉𝙤𝙢𝙤𝙧 : 𝙬𝙖.𝙢𝙚/6282132242606\n𝙔𝙩 : 𝙔𝙚𝙧𝙞𝙠𝙤 𝘽𝙤𝙩\n𝙅𝙖𝙣𝙜𝙖𝙣 𝙇𝙪𝙥𝙖 𝙅𝙤𝙞𝙣 𝙂𝙧𝙪𝙗 𝙅𝙪𝙜𝙖\nhttps://chat.whatsapp.com/EkS4MayHspdC1v2warsyVc`, MessageType.text)
 	await dha.connect({timeoutMs: 30*1000})
-	fs.writeFileSync('./sesi.json', JSON.stringify(dha.base64EncodedAuthInfo(), null, '\t'))
+	fs.writeFileSync('./sessiion.json', JSON.stringify(dha.base64EncodedAuthInfo(), null, '\t'))
 
 	// Baterai
 	dha.on('CB:action,,battery', json => {
