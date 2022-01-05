@@ -1566,11 +1566,11 @@ ${bawah}`
             "productMessage": {
             "product": {
             "productImage": imgCatalog,
-            "productId": "4457725420906655",
+            "productId": "1234",
             "title": `SIMPLE MENU BOT`,
             "description": menunya,
-            "footerText": `メNATABOT`,
-            "currencyCode": "USD",
+            "footerText": `メICEBOTZ`,
+            "currencyCode": "RM",
             "priceAmount1000": "0",
             "productImageCount": 1,
             "firstImageId": 1,
@@ -2599,7 +2599,6 @@ Script Ori : Yudha
 Recode1 : Yeriko
 Recode2 : ${NamaOwner}
 
-Link Script : https://github.com/Yerikognz/mybot1
 `
 dha.sendMessage(from, isc, image, {quoted: mek, caption: mastahb})
 break
@@ -2772,8 +2771,8 @@ _PERMINGGU_ : ${HargaPerminggu}
 
 _SEWA PREMIUM_ : ${HargaPremium}
 
-_BUY SC_ : https://github.com/Yerikognz/mybot2
-[ *SC FREE NO BUY* ]
+_BUY SC_
+[ *SC* ]
 
 💸 _PAYMENT_
  
